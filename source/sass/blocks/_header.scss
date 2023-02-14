@@ -78,6 +78,9 @@
 
 @include max-width($mobMedia) {
   .header {
+    &__logo {
+      max-width: rem(98);
+    }
     &__register {
       display: none;
     }
