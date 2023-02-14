@@ -206,6 +206,14 @@
       margin-right: 0;
       position: absolute;
     }
+    &__timer {
+      grid-gap: 0;
+      justify-content: space-between;
+      padding: rem(8.7) rem(17);
+    }
+    &__timer-item {
+      flex: 0 0 auto;
+    }
   }
   .progress {
     &__row-item {
@@ -220,8 +228,16 @@
 @include max-width($mobMedia) {
   .home {
     padding: rem(50) 0 0;
+    overflow: hidden;
     &__body {
       grid-template-columns: 100%;
+      align-items: center;
+      grid-gap: rem(80);
+    }
+    &__offer {
+      position: initial;
+      margin-inline: auto;
+      animation: none;
     }
   }
   .progress {
