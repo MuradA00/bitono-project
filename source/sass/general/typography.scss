@@ -1,0 +1,21 @@
+.main-title {
+  font-size: clamp(35px, vw(54), 54px);
+  font-weight: 700;
+  text-align: center;
+  color: var(--clr-light-400);
+  text-transform: capitalize;
+}
+
+.label {
+  font-size: clamp(15px, vw(16), 16px);
+  text-align: center;
+  color: var(--clr-yellow-400);
+  letter-spacing: 0.5em;
+  font-weight: 700;
+  margin-bottom: rem(10);
+  text-transform: uppercase;
+  @include max-width($mobMedia) {
+    margin-bottom: rem(5);
+    font-size: rem(15);
+  }
+}

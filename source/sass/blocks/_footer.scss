@@ -1,0 +1,142 @@
+.footer {
+  background-color: var(--bg-footer);
+  padding: clamp(20px, vw(50), 50px) 0;
+  &__body {
+    display: grid;
+    grid-gap: rem(20);
+  }
+  &__logo {
+    margin-bottom: rem(20);
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    &_center {
+      align-items: center;
+    }
+  }
+  &__top {
+    padding-bottom: rem(50);
+    border-bottom: 1px solid hsla(203, 4%, 64%, 0.3);
+    grid-gap: rem(20);
+  }
+  &__inner-descr {
+    p {
+      color: hsla(203, 4%, 64%, 1);
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.9375;
+    }
+  }
+  &__row {
+    display: flex;
+    flex: 1;
+    grid-gap: rem(29);
+    max-width: rem(590);
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(20);
+    width: 100%;
+  }
+  &__col-heading {
+    font-weight: 500;
+    font-size: rem(20);
+  }
+  &__info {
+    max-width: rem(387);
+  }
+  &__copy {
+    p {
+      color: hsla(203, 4%, 64%, 1);
+    }
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-gap: rem(15);
+  &__item {
+    a {
+      display: block;
+      width: 100%;
+      color: hsla(203, 4%, 64%, 1);
+      font-weight: 400;
+      font-size: 1rem;
+      transition: all 400ms ease;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.socials {
+  @include df;
+  grid-gap: rem(20);
+  &__item {
+    transition: all 400ms cubic-bezier(.175,.885,.32,1.275);
+    &:hover {
+      transform: scale(.95);
+    }
+  }
+}
+
+@include max-width($tabletMedia) {
+  .footer {
+    &__top {
+      flex-direction: column;
+    }
+    &__col-heading {
+      font-size: rem(18);
+    }
+  }
+  .footer-links {
+    &__item {
+      a {
+        font-size: rem(15);
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .footer {
+    &__inner-descr {
+      p {
+        font-size: rem(15);
+        line-height: 156%;
+      }
+    }
+    &__row {
+      flex-wrap: wrap;
+      grid-gap: rem(40);
+    }
+    &__copy {
+      p {
+        font-size: rem(15);
+      }
+    }
+    &__col {
+      width: calc((100% / 2) - 40px);
+    }
+  }
+  .socials {
+    grid-gap: rem(16);
+    &__item {
+      a {
+        max-width: rem(40);
+      }
+    }
+  }
+}
+
+@include max-width(21.875em) {
+  .footer {
+    &__bottom {
+      flex-direction: column;
+      grid-gap: rem(20);
+    }
+  }
+}

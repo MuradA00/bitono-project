@@ -1,0 +1,91 @@
+.referral {
+  &__title {
+    margin-bottom: rem(20);
+  }
+  &__subheading {
+    color: hsla(0, 0%, 77%, 1);
+    font-size: 1rem;
+    text-align: center;
+    max-width: rem(368);
+    align-self: center;
+  }
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(60);
+  }
+  &__inner {
+    display: flex;
+    grid-gap: rem(21);
+  }
+  &__block-wrapper {
+    width: calc((100% / 3) - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-gap: rem(15);
+    &:hover .referral__graph-block {
+      background: var(--bg-active-block);
+    }
+  }
+  &__graph-block {
+    cursor: pointer;
+    background: hsla(235, 29%, 15%, 1);
+    @include dfc;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    &_first {
+      min-height: rem(208);
+    }
+    &_second {
+      min-height: rem(128);
+    }
+    &_third {
+      min-height: rem(83);
+    }
+  }
+  &__graph-level {
+    font-weight: 500;
+  }
+  &__graph-amount {
+    min-width: rem(106);
+    font-size: rem(28);
+    top: -52.5px;
+    font-weight: 500;
+    position: absolute;
+    transform: translateY(50%);
+    padding: rem(10) rem(25);
+    box-shadow: 0px 2.773469924926758px 33.975006103515625px 0px hsla(234, 100%, 14%, 0.12);
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(0px 2.77347px 33.975px rgba(0, 7, 72, 0.12));
+    backdrop-filter: blur(40px);
+    border-radius: 7px;
+  }
+  &__graph-level {
+    text-align: center;
+  }
+}
+
+@include max-width($tabletMedia) {
+  .referral {
+    &__graph-amount {
+      font-size: rem(20);
+      top: -22px;
+      transform: translateY(0%);
+      min-width: rem(68);
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .referral {
+    &__inner {
+      flex-direction: column;
+      grid-gap: rem(60);
+    }
+    &__block-wrapper {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.header {
+  padding: rem(30) 0;
+  &__logo {
+    max-width: rem(120);
+  }
+  &__register {
+    padding: rem(15) rem(42.5);
+  }
+  &__body {
+    @include df;
+    justify-content: space-between;
+  }
+  &__options {
+    @include df;
+    grid-gap: rem(10);
+  }
+  &__line {
+    display: block;
+    height: rem(25.5);
+    width: 1px;
+    background-color: hsla(203, 4%, 64%, .2)
+  }
+  &__burger {
+    display: none;
+    flex-direction: column;
+    grid-gap: 6.5px;
+    span {
+      display: block;
+      width: rem(36.75);
+      height: 3.75px;
+      border-radius: 10px;
+      background-color: var(--clr-light-400)
+    }
+  }
+  &__secure {
+    @include df;
+    grid-gap: rem(10);
+    span {
+      font-size: rem(14);
+      font-weight: 600;
+      transition: all 400ms ease;
+    }
+    &:hover {
+      span {
+        color: var(--clr-yellow-400);
+      }
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include df;
+    grid-gap: rem(20);
+  }
+  &__link {
+    font-weight: 600;
+    font-size: rem(14);
+    transition: all 400ms ease;
+    &:hover {
+      color: var(--clr-yellow-400);
+    }
+  }
+}
+
+
+@include max-width($tabletMedia) {
+  .nav {
+    display: none;
+  }
+  .header {
+    &__burger {
+      display: flex;
+      margin-left: rem(10);
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .header {
+    &__register {
+      display: none;
+    }
+    &__secure {
+      display: none;
+    }
+    &__line {
+      display: none;
+    }
+  }
+}
