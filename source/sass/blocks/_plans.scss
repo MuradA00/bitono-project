@@ -1,0 +1,173 @@
+.plans {
+  display: none;
+  &__heading  {
+    transition: all 400ms ease;
+    margin-bottom: rem(50);
+  }
+  &__table {
+    max-width: rem(996);
+    margin-inline: auto;
+    background-color: hsla(234, 40%, 10%, 1);
+    border-radius: 16px;
+    padding: rem(40) rem(102) rem(30) rem(74);
+    margin-bottom: rem(50);
+  }
+  &__table-heading {
+    max-width: rem(684);
+    margin-left: auto;
+    display: flex;
+    grid-gap: rem(60);
+    margin-bottom: rem(18);
+  }
+  &__table-heading-item {
+    flex: 1;
+    text-align: center;
+    font-size: rem(14);
+    color: hsla(0, 0%, 77%, 1);
+  }
+  &__table-row {
+    @include df;
+    position: relative;
+    transition: all 400ms ease;
+    &:hover .plans__table-row-item {
+      color: hsla(0, 0%, 95%, 1);
+    }
+    &:hover .plans__table-row-item_selected {
+      transform: translateY(0);
+      font-size: rem(23);
+      font-weight: 600;
+    }
+    &:hover .plans__table-row-item_selected span{
+      opacity: 1;
+    }
+    &:hover {
+      transform: translateX(-70px);
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    &:hover .plans__table-row-item_selected::before {
+      opacity: 1;
+    }
+    &::before {
+      @include psevdo;
+      background: var(--bg-active-block);
+      width: rem(1040);
+      height: rem(80);
+      border-radius: 16px;
+      right: rem(-140);
+      opacity: 0;
+      transition: all 400ms ease;
+    }
+    &:not(:last-child) {
+      padding-bottom: rem(20);
+      border-bottom: 1px dashed hsla(234, 15%, 25%, 0.37);
+    }
+  }
+  &__table-row-item {
+    color: hsla(0, 0%, 77%, 1);
+    position: relative;
+    &:nth-child(2) {
+      margin-left: 72.5px;
+    }
+    &:nth-child(3) {
+      margin-left: 141.5px;
+    }
+    &:nth-child(4) {
+      margin-left: 150px;
+    }
+    &:nth-child(5) {
+      margin-left: 134.5px;
+    }
+    &_selected {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(-12px);
+      transition: 400ms ease;
+      text-align: center;
+      position: relative;
+      &::before {
+        @include psevdo;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(191);
+        height: rem(70);
+        background-image: url('../../img/plans/hashrate-overlay.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 400ms ease;
+      }
+      span {
+        font-size: rem(15);
+        font-weight: 600;
+        color: hsla(0, 0%, 95%, 1);
+        transition: inherit;
+        opacity: 0;
+      }
+    }
+    &_flex {
+      display: flex;
+      grid-gap: 1rem;
+      & > * {
+        color: #fff;
+      }
+    }
+  }
+  &__table-column {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(20);
+    transition: all 400ms ease;
+    &:hover {
+      grid-gap: rem(40);
+    }
+  }
+  &__table-row-name {
+    font-size: rem(20);
+    font-weight: 700;
+    margin-bottom: rem(4);
+  }
+  &__table-row-coin {
+    color: hsla(0, 0%, 77%, 1);
+    letter-spacing: 0.02em;
+  }
+  &__marquee-list {
+  display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 14s;
+    animation-duration: 14s;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    -webkit-animation-name: move;
+    animation-name: move;
+  }
+  &__marquee-item {
+    display: inline-block;
+    vertical-align: middle;
+    span {
+      display: block;
+    }
+  }
+}
+
+
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

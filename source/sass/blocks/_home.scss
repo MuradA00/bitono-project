@@ -1,5 +1,10 @@
 .home {
   padding: rem(97) 0 0;
+  position: relative;
+  &__offer-image {
+    will-change: transform;
+    animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+  }
   &__body {
     display: grid;
     grid-template-columns: .475fr .43fr;
@@ -10,23 +15,23 @@
     position: relative;
     &::before {
       @include psevdo;
-      left: -90px;
+      left: -120px;
       top: -70px;
       background-image: url('../../img/home/rectangle-image.png');
       width: rem(415);
       height: rem(415);
-      transform: rotate(135deg);
+      transform: rotate(125deg);
       background-repeat: no-repeat;
     }
     &::after {
       @include psevdo;
       left: rem(300);
-      top: rem(170);
+      top: rem(150);
       width: rem(190);
       height: rem(190);
       background-image: url('../../img/home/small-rectangle.png');
       background-repeat: no-repeat;
-      transform: rotate(-110deg);
+      transform: rotate(-140deg);
     }
   }
   &__info {
@@ -35,9 +40,27 @@
   }
   &__offer {
     margin-right: rem(70);
-    will-change: transform;
-    animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
     position: relative;
+    &::before {
+      @include psevdo;
+      left: -50px;
+      background-size: 100% 100%;
+      width: rem(154);
+      top: 120px;
+      height: rem(204);
+      transform: rotate(0deg);
+      background-image: url('../../img/home/home-line-pseudo-1.png');
+    }
+    &::after {
+      @include psevdo;
+      width: rem(73);
+      height: rem(200);
+      background-image: url('../../img/home/home-line-pseudo-2.png');
+      background-size: 100% 100%;
+      right: -76.5px;
+      top: 90px;
+      z-index: -1;
+    }
     & > * {
       font-style: italic;
     }
@@ -55,13 +78,15 @@
   }
   &__timer {
     position: absolute;
-    bottom: -10%;
-    left: 15px;
-    width: 100%;
+    backdrop-filter: blur(10px);
+    bottom: -35px;
+    right: 40px;
+    transform: skew(-12deg);
+    width: rem(314);
     display: flex;
     align-items: center;
-    grid-gap: rem(30);
-    padding: rem(14);
+    grid-gap: rem(15);
+    padding: rem(14) rem(20);
   }
   &__timer-item {
     display: flex;
@@ -69,13 +94,16 @@
     transform: skew(11deg);
     flex: 1;
     text-align: center;
+    font-size: rem(10);
     span {
       font-size: rem(22);
       font-weight: 600;
     }
   }
   &__bonus {
-    left: -150px;
+    backdrop-filter: blur(10px);
+    left: -65px;
+    transform: skew(-12deg);
     position: absolute;
     padding: rem(18) rem(23) rem(15.5) rem(16);
     z-index: 20;
@@ -84,30 +112,38 @@
     grid-gap: rem(10);
     bottom: rem(60);
   }
+  &__bonus-inner {
+    transform: skew(12deg);
+  }
+  &__colon {
+    font-weight: 900;
+  }
   &__bonus-heading {
     font-size: rem(12);
     font-weight: 600;
+    margin-bottom: rem(11);
     span {
       font-weight: 700;
       font-size: rem(20);
     }
   }
-  &__offer-image {
-    transform: skew(11deg) translate(-20px, -25px);
-    // position: absolute;
-    // width: rem(334);
-    // height: rem(354);
-    img, picture {
-      width: 100%;
-    }
-  }
   &__endpoint {
+    position: absolute;
+    bottom: rem(0);
+    right: 110px;
+    transform: skew(-12deg);
     padding: rem(5) rem(14.7);
-    max-width: rem(130);
+    max-width: rem(135);
+    backdrop-filter: blur(10px);
     align-self: center;
     height: fit-content;
     z-index: 10;
     margin-bottom: rem(40);
+    span {
+      transform: skew(12deg);
+      display: block;
+      font-weight: 600;
+    }
   }
   &__title {
     font-size: clamp(40px, vw(70), 70px);
@@ -191,6 +227,12 @@
 
 @include max-width($tabletMedia) {
   .home {
+    &__body {
+      margin-bottom: rem(150);
+    }
+    &__block {
+      min-height: auto;
+    }
     &__container {
       position: relative;
     }
@@ -205,11 +247,45 @@
       right: 0;
       margin-right: 0;
       position: absolute;
+      &::after {
+        display: none;
+      }
+    }
+    &__bonus {
+      bottom: 25px;
+      left: rem(-40);
+    }
+    &__endpoint {
+      right: rem(55);
+      bottom: rem(-15);
     }
     &__timer {
       grid-gap: 0;
+      width: rem(213);
       justify-content: space-between;
       padding: rem(8.7) rem(17);
+    }
+    &__colon {
+      font-size: rem(10);
+    }
+    &__timer-item {
+      span {
+        font-size: rem(17);
+      }
+    }
+    &__bonus-heading {
+      text-align: center;
+      margin-bottom: rem(6);
+      font-size: rem(7);
+      span {
+        font-size: rem(12);
+      }
+    }
+    &__bonus-btn {
+      padding: rem(6.63) rem(35.7) !important;
+    }
+    &__bonus {
+      padding: rem(9.3) rem(15) rem(9.31) rem(17);
     }
     &__timer-item {
       flex: 0 0 auto;
@@ -232,12 +308,48 @@
     &__body {
       grid-template-columns: 100%;
       align-items: center;
-      grid-gap: rem(80);
+      grid-gap: rem(30);
+      margin-bottom: rem(88);
+      &::before, &::after {
+        display: none;
+      }
+    }
+    &__bonus {
+      max-width: rem(150);
+    }
+    &__timer {
+      right: 20px;
     }
     &__offer {
-      position: initial;
-      margin-inline: auto;
+      max-width: rem(290);
+      position: relative;
+      margin: 0 auto;
       animation: none;
+      &::before {
+        top: 100px;
+        left: -30px;
+        width: rem(100);
+        height: rem(131);
+      }
+    }
+    &__endpoint {
+      right: rem(50);
+    }
+    &__bonus {
+      padding: rem(13.7) rem(11.5) rem(9.31) rem(16);
+    }
+    &__descr {
+      margin-bottom: rem(9);
+    }
+    &__course {
+      grid-gap: rem(8);
+    }
+    &__course-text {
+      font-size: rem(15);
+    }
+    &__bonus-btn {
+      font-size: rem(11);
+      padding: rem(6.6) rem(30) !important;
     }
   }
   .progress {
@@ -252,6 +364,14 @@
     }
     &__row-name {
       font-size: rem(15);
+    }
+  }
+}
+
+@include max-width(25em) {
+  .home {
+    &__offer {
+      margin: 0 0 0 auto;
     }
   }
 }

@@ -2,6 +2,11 @@
   padding: rem(30) 0;
   &__logo {
     max-width: rem(120);
+    transition: all 300ms ease;
+    &:hover {
+      transform: scale(.975);
+      filter: brightness(105%);
+    }
   }
   &__register {
     padding: rem(15) rem(42.5);

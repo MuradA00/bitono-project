@@ -25,6 +25,10 @@ html {
   min-height: -webkit-fill-available;
 }
 
+.body-locked {
+  overflow: hidden;
+}
+
 [data-aos^=fade-up][data-aos^=fade-up] {
   transform: translate3d(0px, 60px, 0);
 }
