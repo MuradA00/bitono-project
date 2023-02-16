@@ -1,10 +1,27 @@
 .plans {
+  position: relative;
   &__heading  {
     transition: all 400ms ease;
     margin-bottom: rem(50);
   }
   &__body {
+    position: relative;
     overflow: hidden;
+  }
+  &__decor {
+    position: absolute;
+    &_star {
+      bottom: 0;
+      right: -48.5px;
+    }
+    &_circle {
+      right: 30px;
+      bottom: rem(130);
+    }
+    &_play-btn {
+      left: 0px;
+      top: 8%;
+    }
   }
   &__table {
     padding: rem(40) 0 0;
@@ -244,20 +261,17 @@
   }
   &__marquee {
     @include df;
-    grid-gap: rem(0);
-    justify-content: space-between;
-    animation: animate 20s linear infinite;
-    animation-delay: -20s;
-    &:hover {
-      animation-play-state: paused;
-    }
+    position: relative;
   }
   &__marquee-list {
     @include df;
     display: flex;
     grid-gap: rem(43.5);
-    &:nth-child(2) {
-      padding-left: rem(45);
+    &:nth-child(1) {
+      animation: marquee 15s linear infinite;
+      &:hover {
+        animation-play-state: paused;
+      }
     }
   }
   &__marquee-item {
@@ -282,6 +296,9 @@
 
 @include max-width($tabletMedia) {
   .plans {
+    &__decor {
+      display: none;
+    }
     &__heading {
       margin-bottom: rem(35);
     }
@@ -416,20 +433,11 @@
   }
 }
 
-@keyframes animate {
-  0% {
+@keyframes marquee {
+  from {
     transform: translateX(100%);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
 }
-@keyframes animate2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-200%);
-  }
-}
-

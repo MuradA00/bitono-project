@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   &::before {
     @include psevdo;
     top: 0;

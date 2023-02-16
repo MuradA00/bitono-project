@@ -2,6 +2,14 @@
   &__heading {
     margin-bottom: rem(50);
   }
+  &__container {
+    position: relative;
+  }
+  &__decor {
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+  }
   &__row {
     display: flex;
     flex-wrap: wrap;
@@ -35,6 +43,9 @@
     }
     &__row-descr {
       font-size: rem(15);
+    }
+    &__decor {
+      display: none;
     }
   }
 }
