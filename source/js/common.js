@@ -55,3 +55,13 @@ if (burger) {
 if (burger) {
   burger.addEventListener('click', showMenu);
 }
+
+
+$(window).on('load', function() {$('.plans__marquee').liMarquee({
+  direction: 'left',
+  circular: true,
+  hoverStop: true
+}
+
+)}
+);
