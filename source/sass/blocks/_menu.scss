@@ -13,10 +13,11 @@
   border-image-slice: 1;
   border-image-source: linear-gradient(151.65deg, rgba(255, 255, 255, 0.3) -6.81%, rgba(255, 255, 255, 0) 106.92%);
   z-index: 1000;
-  transition: all 400ms ease;
+  transition: all 400ms ease 400ms;
   transform: translateX(100%);
   pointer-events: none;
   user-select: none;
+  overflow: hidden;
   &__close {
     margin-left: auto;
     margin-left: rem(80);

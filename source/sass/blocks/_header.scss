@@ -11,6 +11,10 @@
   &__register {
     padding: rem(15) rem(42.5);
   }
+  &__actions {
+    @include df;
+    grid-gap: rem(50);
+  }
   &__body {
     @include df;
     justify-content: space-between;
@@ -83,6 +87,7 @@
 
 @include max-width($mobMedia) {
   .header {
+    padding: rem(20) 0 0;
     &__logo {
       max-width: rem(98);
     }

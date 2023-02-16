@@ -1,7 +1,10 @@
+const firstBlock = document.querySelector('.bonus__block_first');
+
+console.log(getComputedStyle(firstBlock).transform);
 
 AOS.init({
   once: true,
-  offset: 100,
+  offset: 125,
   duration: 800
 })
 
@@ -19,6 +22,7 @@ function closeMenuByClick() {
     })
   }
 }
+
 closeMenuByClick();
 
 function showMenu() {

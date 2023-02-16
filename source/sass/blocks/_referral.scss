@@ -2,6 +2,9 @@
   &__title {
     margin-bottom: rem(20);
   }
+  &__body {
+    position: relative;
+  }
   &__subheading {
     color: hsla(0, 0%, 77%, 1);
     font-size: 1rem;
@@ -17,7 +20,26 @@
   &__inner {
     display: flex;
     grid-gap: rem(21);
+    min-height: rem(243);
+    position: relative;
   }
+  &__decor {
+    position: absolute;
+    z-index: 10;
+    &_first {
+      right: 25%;
+      top: 10%;
+    }
+    &_second {
+      bottom: rem(-110);
+      left: rem(-60);
+    }
+    &_star {
+      left: rem(220);
+      top: -5px;
+    }
+  }
+
   &__block-wrapper {
     width: calc((100% / 3) - 10px);
     display: flex;
@@ -40,15 +62,30 @@
     }
     &_second {
       min-height: rem(128);
+      p {
+        transform: translateY(10px);
+      }
     }
     &_third {
       min-height: rem(83);
+      position: relative;
+      p {
+        transform: translateY(10px);
+      }
+      &::after {
+        @include psevdo;
+        top: -20px;
+        height: rem(146);
+        width: rem(94);
+        background-image: url('../../img/home/line');
+      }
     }
   }
   &__graph-level {
     font-weight: 500;
   }
   &__graph-amount {
+    border: .7px solid hsla(0, 0%, 100%, 0.2);
     min-width: rem(106);
     font-size: rem(28);
     top: -52.5px;
@@ -69,6 +106,9 @@
 
 @include max-width($tabletMedia) {
   .referral {
+    &__decor {
+      display: none;
+    }
     &__graph-amount {
       font-size: rem(20);
       top: -22px;
@@ -80,12 +120,70 @@
 
 @include max-width($mobMedia) {
   .referral {
+    [data-aos^=scalingAnimation][data-aos^=scalingAnimation] {
+      min-height: 13rem;
+      opacity: 0;
+    }
+
+    [data-aos^=scalingAnimation][data-aos^=scalingAnimation].aos-animate {
+      opacity: 1;
+    }
+
+    [data-aos^=secondScalingAnimation][data-aos^=secondScalingAnimation] {
+      min-height: rem(128);
+      opacity: 0;
+    }
+
+    [data-aos^=secondScalingAnimation][data-aos^=secondScalingAnimation].aos-animate {
+      opacity: 1;
+    }
+
+    [data-aos^=thirdScalingAnimation][data-aos^=thirdScalingAnimation] {
+      min-height: rem(83);
+      opacity: 0;
+    }
+
+    [data-aos^=thirdScalingAnimation][data-aos^=thirdScalingAnimation].aos-animate {
+      opacity: 1;
+    }
+
     &__inner {
       flex-direction: column;
       grid-gap: rem(60);
+      min-height: auto;
     }
     &__block-wrapper {
       width: 100%;
     }
   }
+}
+
+[data-aos^=scalingAnimation][data-aos^=scalingAnimation] {
+  min-height: 0;
+  opacity: 0;
+}
+
+[data-aos^=scalingAnimation][data-aos^=scalingAnimation].aos-animate {
+  min-height: 13rem;
+  opacity: 1;
+}
+
+[data-aos^=secondScalingAnimation][data-aos^=secondScalingAnimation] {
+  opacity: 0;
+  min-height: 0;
+}
+
+[data-aos^=secondScalingAnimation][data-aos^=secondScalingAnimation].aos-animate {
+  min-height: rem(128);
+  opacity: 1;
+}
+
+[data-aos^=thirdScalingAnimation][data-aos^=thirdScalingAnimation] {
+  min-height: 0;
+  opacity: 0;
+}
+
+[data-aos^=thirdScalingAnimation][data-aos^=thirdScalingAnimation].aos-animate {
+  min-height: rem(83);
+  opacity: 1;
 }
