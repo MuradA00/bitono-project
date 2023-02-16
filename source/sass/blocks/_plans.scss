@@ -290,6 +290,10 @@
   }
 }
 
+.js-marquee-wrapper {
+  display: flex;
+}
+
 @include max-width($tabletMedia) {
   .plans {
     &__decor {
@@ -495,4 +499,13 @@
 .no_drag .str_move,
 .noStop .str_move{
 	cursor:inherit;
+}
+
+.marquee3k__wrapper {
+  display: flex;
+  grid-gap: rem(50);
+}
+
+.plans__marquee-list{
+  display: flex !important;
 }

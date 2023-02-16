@@ -1,3 +1,5 @@
+
+
 const firstBlock = document.querySelector('.bonus__block_first');
 
 console.log(getComputedStyle(firstBlock).transform);
@@ -56,12 +58,41 @@ if (burger) {
   burger.addEventListener('click', showMenu);
 }
 
+$(function(){
+  $('.plans__marquee').marquee({
 
-$(window).on('load', function() {$('.plans__marquee').liMarquee({
+
+  //если хотите всегда анимировать при помощи jQuery
+  allowCss3Support: true,
+
+  //работает, когда allowCss3Support установлено в true - смотрите полный список http://www.w3.org/TR/2013/WD-css3-transitions-20131119/#transition-timing-function
+  css3easing: 'linear',
+
+  //требует jQuery easing плагин. По умолчанию - 'linear'
+  easing: 'linear',
+
+  //приостанавливает время перед стартом следующей анимации в миллисекундах
+  delayBeforeStart: 1000,
+  //'left', 'right', 'up' or 'down'
   direction: 'left',
-  circular: true,
-  hoverStop: true
-}
 
-)}
-);
+  //true или false - должен ли marquee быть дублирован для эффекта продолжающегося потока
+  duplicated: true,
+
+  //скорость marquee в миллисекундах
+  duration: 5000,
+
+  //расстояние в пикселях между бегущими строками
+  gap: 40,
+
+  //приостанавливает цикл marquee
+  pauseOnCycle: true,
+
+  //приостанавливает marquee при наведении курсора мыши - используя плагин jQuery https://github.com/tobia/Pause
+  pauseOnHover: true,
+
+  //marquee виден, когда он изначально позиционирован у границы, по направлении которой будет двигаться
+  startVisible: false
+
+  });
+});
