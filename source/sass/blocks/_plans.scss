@@ -72,6 +72,9 @@
       .plans__price {
         display: flex;
       }
+      .plans__inner {
+
+      }
     }
   }
   &__coin {
@@ -101,6 +104,11 @@
     z-index: 5;
     & > * {
       text-transform: uppercase;
+    }
+  }
+  &__column-icon {
+    img {
+      width: rem(42);
     }
   }
   &__column-item-descr {
@@ -150,6 +158,11 @@
     .plans__table-row-item {
       margin: 0 !important;
       flex: 0 0 auto !important;
+    }
+  }
+  &__table-icon {
+    img {
+      width: rem(40);
     }
   }
   &__table-row {

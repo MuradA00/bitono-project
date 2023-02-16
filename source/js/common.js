@@ -15,6 +15,7 @@ const closeIcon = document.querySelector('.menu__close'),
       navLinks = document.querySelectorAll('.menu__nav-link'),
       menu = document.querySelector('.menu'),
       body = document.body,
+      main = document.querySelector('main')
       html = document.documentElement;
 
 function closeMenuByClick() {
@@ -58,17 +59,22 @@ if (burger) {
   burger.addEventListener('click', showMenu);
 }
 
+body.addEventListener('click', (e) => {
+  if (burger.classList.contains('active-burger')) {
+    if (e.target === body) {
+      closeMenu();
+    }
+  }
+})
+
+
 $(function(){
   $('.plans__marquee').marquee({
-
-
   //если хотите всегда анимировать при помощи jQuery
   allowCss3Support: true,
 
-  //работает, когда allowCss3Support установлено в true - смотрите полный список http://www.w3.org/TR/2013/WD-css3-transitions-20131119/#transition-timing-function
   css3easing: 'linear',
 
-  //требует jQuery easing плагин. По умолчанию - 'linear'
   easing: 'linear',
 
   //приостанавливает время перед стартом следующей анимации в миллисекундах
@@ -88,10 +94,8 @@ $(function(){
   //приостанавливает цикл marquee
   pauseOnCycle: true,
 
-  //приостанавливает marquee при наведении курсора мыши - используя плагин jQuery https://github.com/tobia/Pause
   pauseOnHover: true,
 
-  //marquee виден, когда он изначально позиционирован у границы, по направлении которой будет двигаться
   startVisible: false
 
   });
