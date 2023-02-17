@@ -5,6 +5,10 @@
   color: var(--clr-light-400);
   text-transform: capitalize;
   line-height: 140%;
+  &_large {
+    font-size: clamp(36px, vw(70), 70px);
+    text-align: center;
+  }
 }
 
 .label {

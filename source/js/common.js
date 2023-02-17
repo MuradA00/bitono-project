@@ -1,9 +1,3 @@
-
-
-const firstBlock = document.querySelector('.bonus__block_first');
-
-console.log(getComputedStyle(firstBlock).transform);
-
 AOS.init({
   once: true,
   offset: 125,
@@ -15,7 +9,6 @@ const closeIcon = document.querySelector('.menu__close'),
       navLinks = document.querySelectorAll('.menu__nav-link'),
       menu = document.querySelector('.menu'),
       body = document.body,
-      main = document.querySelector('main')
       html = document.documentElement;
 
 function closeMenuByClick() {
@@ -78,7 +71,7 @@ $(function(){
   easing: 'linear',
 
   //приостанавливает время перед стартом следующей анимации в миллисекундах
-  delayBeforeStart: 1000,
+  delayBeforeStart: 500,
   //'left', 'right', 'up' or 'down'
   direction: 'left',
 
@@ -86,7 +79,7 @@ $(function(){
   duplicated: true,
 
   //скорость marquee в миллисекундах
-  duration: 5000,
+  duration: 7000,
 
   //расстояние в пикселях между бегущими строками
   gap: 40,
@@ -96,7 +89,7 @@ $(function(){
 
   pauseOnHover: true,
 
-  startVisible: false
+  startVisible: true
 
   });
 });

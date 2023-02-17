@@ -115,6 +115,9 @@
     border-radius: 7px;
     display: grid;
     place-items: center;
+    img, svg {
+      max-width: rem(32);
+    }
   }
   &__block-heading {
     font-weight: 700;

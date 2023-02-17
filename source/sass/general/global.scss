@@ -57,6 +57,9 @@ html {
 p {
   letter-spacing: 0.02em;
   line-height: 150%;
+  @include max-width($mobMedia) {
+    font-size: rem(15);
+  }
 }
 
 *,

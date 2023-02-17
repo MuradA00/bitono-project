@@ -1,0 +1,30 @@
+.decor {
+  & > * {
+    position: absolute;
+    z-index: -1;
+  }
+  &__triangle {
+    top: rem(110);
+    left: rem(-110);
+    transform: rotate(8deg);
+  }
+  &__circle {
+    top: rem(200);
+    right: rem(172);
+  }
+  &__rhombus {
+    right: 0;
+    top: rem(515)
+  }
+  &__play-btn {
+    top: rem(1000);
+    left: 2rem;
+    transform: rotate(154deg);
+  }
+}
+
+@include max-width($mobMedia) {
+  .decor {
+    display: none;
+  }
+}

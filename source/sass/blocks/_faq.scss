@@ -1,0 +1,117 @@
+.faq {
+  &_section {
+    .faq__body {
+      position: relative;
+      &::before {
+        @include psevdo;
+        width: rem(20);
+        left: -30px;
+        top: 5px;
+        height: rem(20);
+        background-image: url('../../img/home/play-btn-icon.png');
+        background-size: 100% 100%;
+        @include max-width($mobMedia) {
+          display: none;
+        }
+      }
+    }
+  }
+  &_single {
+    padding-top: rem(50);
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(60);
+  }
+  &__title {
+    margin-bottom: rem(50);
+  }
+  &__main-title {
+    margin-bottom: rem(35);
+    text-align: left;
+  }
+  &__heading {
+    margin-bottom: clamp(30px, vw(50), 50px);
+  }
+  &__inner {
+    background-color: hsla(234, 40%, 10%, 1);
+    padding: rem(40);
+    border-radius: 10px;
+  }
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  grid-gap: rem(30);
+  &__item {
+    padding-bottom: rem(30);
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: url('../../img/faq/faq-arrow.svg');
+      position: absolute;
+      right: 0;
+      top: 14px;
+      transition: 400ms;
+    }
+  }
+  &__visible {
+    font-weight: 500;
+    font-size: rem(24);
+  }
+  &__hidden {
+    overflow: hidden;
+    max-height: 0;
+    transition: 500ms ease;
+    max-width: rem(912);
+    display: grid;
+    grid-gap: rem(35);
+    p {
+      line-height: 150%;
+      color: hsla(0, 0%, 77%, .7);
+    }
+  }
+}
+
+.collapse {
+  &::after {
+    transform: rotate(180deg);
+  }
+  .faq-list {
+    &__hidden {
+      padding-top: rem(20);
+      max-height: rem(240);
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .faq {
+    &__inner {
+      padding: rem(20);
+    }
+  }
+  .faq-list {
+    grid-gap: rem(20);
+    &__item {
+      padding-right: rem(30);
+      &::after {
+        top: 0;
+      }
+      padding-bottom: rem(15);
+    }
+    &__visible {
+      font-size: rem(20);
+    }
+  }
+  .collapse {
+    .faq-list {
+      &__hidden {
+        max-height: rem(600);
+      }
+    }
+  }
+}
