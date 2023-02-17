@@ -4,5 +4,8 @@
     &__title {
       font-size: clamp(36px, vw(70), 70px);
     }
+    &__decor {
+      display: none;
+    }
   }
 }
