@@ -79,7 +79,7 @@ $(function(){
   duplicated: true,
 
   //скорость marquee в миллисекундах
-  duration: 7000,
+  duration: 14000,
 
   //расстояние в пикселях между бегущими строками
   gap: 40,
