@@ -8,6 +8,26 @@
       filter: brightness(105%);
     }
   }
+  &__currency {
+    display: none;
+    align-items: center;
+  }
+  &__currency-icon {
+    max-width: rem(24);
+  }
+  &__currency-name {
+    margin-left: rem(15);
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+  &__currency-amount {
+    margin-left: rem(10);
+  }
+  &__currency-arrow {
+    margin-left: rem(5);
+    height: rem(13);
+    display: grid;
+    place-items: center;
+  }
   &__register {
     padding: rem(15) rem(42.5);
   }
@@ -99,6 +119,28 @@
     }
     &__line {
       display: none;
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .header {
+    &__currency {
+      display: none !important;
+    }
+  }
+}
+
+
+.main-page {
+  @include max-width($tabletMedia) {
+    .header {
+      &__secure, .header__register, .header__line {
+        display: none;
+      }
+      &__currency {
+        display: flex;
+      }
     }
   }
 }

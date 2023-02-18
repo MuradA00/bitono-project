@@ -1,0 +1,205 @@
+.auth {
+  padding-top: rem(50);
+  &__wrapper {
+    display: grid;
+    grid-template-columns: .82fr .4fr;
+    grid-gap: rem(21);
+    & > * {
+      background-color: hsla(234, 40%, 10%, 1);
+      border-radius: 16px;
+    }
+  }
+  &__inner {
+    padding: rem(100);
+  }
+  &__subheading {
+    max-width: rem(340);
+    margin: 0 auto;
+  }
+  &__error {
+    max-width: rem(570);
+    display: none;
+    align-items: flex-start;
+    grid-gap: rem(10);
+    p {
+      color: hsla(358, 87%, 59%, 1);
+      text-align: center;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  &__error-icon {
+    flex: 0 0 auto;
+  }
+  &__heading {
+    margin-bottom: rem(50);
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: rem(20);
+  }
+  &__column {
+    margin-bottom: rem(35);
+    display: grid;
+    grid-gap: rem(20);
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-gap: rem(20);
+  }
+  &__submit {
+    width: 100%;
+    flex: 1;
+  }
+  &__column-heading {
+    color: hsla(0, 0%, 85%, 1);
+  }
+  &__column-block {
+    display: grid;
+    grid-gap: rem(15);
+  }
+  &__column-field {
+    @include df;
+    grid-gap: rem(10);
+    padding: rem(15) rem(20);
+    border-radius: 5px;
+    border: 1px solid hsla(237, 16%, 21%, 1);
+    input {
+      background-color: transparent;
+      font-size: rem(16);
+      font-weight: 300;
+      color: #fff;
+      &::placeholder {
+        font-weight: inherit;
+        [type^=password] {
+          -webkit-text-security: square;
+        }
+      }
+    }
+  }
+  &__alter-link {
+    a {
+      font-weight: 600;
+      color: var(--clr-yellow-400);
+    }
+  }
+  &__bonus {
+    padding-top: rem(181);
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      @include psevdo;
+      left: 30%;
+      bottom:-100px;
+      transform: translateX(-50%);
+      background-image: url('../../img/register/authorization-overlay.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: rem(650);
+      height: rem(660);
+      background-position: center;
+      z-index: 1;
+    }
+  }
+  &__bonus-text {
+    font-size: rem(87);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    margin-bottom: rem(10);
+    position: relative;
+    z-index: 5;
+    span {
+      font-style: normal;
+      font-size: rem(25);
+      font-weight: 400;
+    }
+    p {
+      position: relative;
+      color: #fff;
+      z-index: 50;
+      &::before {
+        @include psevdo;
+        background-color: hsla(226, 68%, 68%, 1);
+        width: rem(212);
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        height: rem(50);
+        filter: blur(26.5px);
+        z-index: -1;
+      }
+    }
+  }
+  &__bottom-text {
+    font-size: rem(20);
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@include max-width($tabletMedia) {
+  .auth {
+    &__wrapper {
+      grid-template-columns: 100%;
+    }
+    &__inner {
+      padding: rem(70) rem(30);
+    }
+    &__submit {
+      max-width: rem(590);
+      padding: rem(20);
+      border-radius: 10px;
+      align-self: center;
+    }
+    &__bonus {
+      padding-top: rem(100);
+      min-height: rem(450);
+      &::before {
+        width: 100%;
+        height: 100%;
+        background-image: url('../../img/register/tablet-authorization-overlay.png');
+        background-size: 100% 100%;
+        transform: translate(0);
+        left: 0;
+      }
+    }
+    &__bonus-text {
+      p {
+        font-size: rem(96);
+        line-height: 120%;
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .auth {
+    &__inner {
+      padding: rem(50) rem(20);
+    }
+    &__title {
+      font-size: rem(36) !important;
+    }
+    &__bonus {
+      padding-top: rem(70);
+      min-height: rem(360);
+      &::before {
+        background-size: contain;
+      }
+    }
+    &__bonus-text {
+      margin-bottom: rem(20);
+      p {
+        font-size: rem(76);
+      }
+    }
+  }
+}

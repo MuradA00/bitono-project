@@ -19,12 +19,23 @@
   &__play-btn {
     top: rem(1000);
     left: 2rem;
-    transform: rotate(154deg);
+    transform: rotate(184deg);
   }
 }
 
 @include max-width($mobMedia) {
   .decor {
     display: none;
+  }
+}
+
+.large-decor {
+  .decor {
+    &__triangle {
+      img {
+        width: rem(540);
+        height: rem(540);
+      }
+    }
   }
 }

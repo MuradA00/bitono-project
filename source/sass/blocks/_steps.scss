@@ -1,0 +1,127 @@
+.steps {
+  padding-top: rem(50);
+  position: relative;
+  &::before {
+    @include psevdo;
+    width: rem(296);
+    height: rem(296);
+    background-image: url('../../img/steps/large-circle.svg');
+    background-size: 100% 100%;
+    right: -100px;
+    top: rem(1500);
+  }
+  &::after {
+    @include psevdo;
+    width: rem(31);
+    height: rem(31);
+    background-image: url('../../img/referral/star-icon.png');
+    background-size: 100% 100%;
+    bottom: rem(301);
+    left: rem(70);
+  }
+  &__heading {
+    margin-bottom: rem(90);
+  }
+  &__title {
+    margin-bottom: rem(15);
+  }
+  &__body {
+    max-width: rem(840);
+    margin-inline: auto;
+  }
+  &__subheading {
+    margin-inline: auto;
+    max-width: rem(487);
+    text-align: center;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(100);
+  }
+  &__block {
+    display: flex;
+    align-items: flex-start;
+    grid-gap: rem(95);
+  }
+  &__block-icon {
+    flex: 0 0 auto;
+    padding: rem(23);
+    border-radius: 15px;
+    background-color: hsla(237, 23%, 16%, 1);
+    img {
+      display: block;
+      width: rem(61);
+      height: rem(61);
+    }
+  }
+  &__block-order {
+    color: var(--clr-yellow-400);
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: rem(10);
+  }
+  &__block-prompt {
+    font-weight: 700;
+    font-size: rem(35);
+    margin-bottom: rem(20);
+  }
+  &__descr {
+    margin-bottom: rem(30);
+  }
+}
+
+@include max-width($tabletMedia) {
+  .steps {
+    &::before, &::after {
+      display: none;
+    }
+    &__block {
+      grid-gap: rem(40);
+    }
+    &__block-icon {
+      padding: 1rem;
+      img {
+        width: rem(40);
+        height: rem(40);
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .steps {
+    &__subheading {
+      max-width: rem(350);
+    }
+    &__heading {
+      margin-bottom: rem(60);
+    }
+    &__inner {
+      grid-gap: rem(60);
+    }
+    &__block {
+      grid-gap: rem(10);
+    }
+    &__block-icon {
+      border-radius: 8px;
+      padding: rem(10);
+      img {
+        width: rem(25);
+        height: rem(25);
+      }
+    }
+    &__block-prompt {
+      font-size: rem(20);
+      margin-bottom: rem(12);
+    }
+    &__descr {
+      margin-bottom: rem(20);
+    }
+    &__block-order {
+      font-size: rem(12);
+      margin-bottom: rem(5);
+    }
+  }
+}

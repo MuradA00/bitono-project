@@ -1,0 +1,242 @@
+.contact {
+  padding-top: rem(50);
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr .49fr;
+    grid-gap: rem(20);
+    & > * {
+      background-color: hsla(234, 40%, 10%, 1);
+      border-radius: 16px;
+    }
+  }
+  &__heading {
+    margin-bottom: rem(50);
+  }
+  &__title {
+    margin-bottom: rem(15);
+  }
+  &__subheading {
+    max-width: rem(485);
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__input-block {
+    padding: rem(100);
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(20);
+  }
+  &__flex-item {
+    flex: 1;
+  }
+  &__flex {
+    display: flex;
+    grid-gap: rem(20);
+  }
+  &__flex-heading {
+    font-size: 1rem;
+    color: hsla(0, 0%, 85%, 1);
+    margin-bottom: rem(15);
+  }
+  &__flex-input {
+    input {
+      padding: rem(15);
+      border-radius: 5px;
+      background-color: transparent;
+      border: 1px solid hsla(237, 16%, 21%, 1);
+      color: #fff;
+      font-weight: 300;
+      &::placeholder {
+        font-weight: inherit;
+      }
+    }
+  }
+  &__message-field {
+    textarea {
+      padding: rem(20);
+      width: 100%;
+      min-height: rem(130);
+      background-color: transparent;
+      border: 1px solid hsla(237, 16%, 21%, 1);
+      border-radius: 5px;
+      outline: none;
+      color: #fff;
+      resize: none;
+    }
+  }
+  &__input-block {
+    min-height: rem(580);
+  }
+  &__block {
+    padding: rem(100) rem(40) 0;
+    position: relative;
+    &::before {
+      @include psevdo;
+      bottom: 0;
+      background-image: url('../../img/contact/yellow-rhombus.svg');
+      width: rem(58);
+      height: rem(93);
+      left: 0;
+      bottom: 20px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    &::after {
+      @include psevdo;
+      top: 0px;
+      width: rem(130);
+      height: rem(130);
+      background-image: url('../../img/contact/small-triangle.png');
+      right: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &__send {
+    width: fit-content;
+    padding: rem(20) rem(28);
+  }
+  &__block-column {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(10);
+  }
+  &__links {
+    display: grid;
+    grid-gap: 2rem;
+  }
+  &__block-top {
+    color: hsla(0, 0%, 85%, 1);
+  }
+  &__block-link {
+    color: var(--clr-yellow-400);
+  }
+  &__help-image {
+    position: relative;
+    z-index: 10;
+  }
+  &__help-block {
+    position: absolute;
+    max-width: rem(280);
+    min-width: rem(280);
+    &::before {
+      @include psevdo;
+      width: rem(140);
+      height: rem(167);
+      background-image: url('../../img/home/home-line-pseudo-1.png');
+      background-size: 100% 100%;
+      bottom: 80px;
+      z-index: 5;
+      left: -75px;
+    }
+    right: -45px;
+    bottom: 0px;
+  }
+  &__help {
+    bottom: -35px;
+    position: absolute;
+    transform: skew(-12deg);
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
+    backdrop-filter: blur(15.1501px);
+    max-width: rem(211);
+    padding: rem(13);
+    border-radius: 7px;
+    left: rem(80);
+    min-width: rem(211);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    z-index: 20;
+  }
+  &__help-heading {
+    text-align: center;
+    margin-bottom: rem(11);
+  }
+  &__help-btn {
+    padding: rem(9) rem(20);
+    border-radius: 6px;
+    width: 100%;
+    span {
+      font-size: rem(15);
+      transform: skew(12deg);
+      font-style: italic;
+    }
+  }
+}
+
+@include max-width($tabletMedia) {
+  .contact {
+    &__input-block {
+      padding: rem(30) rem(50);
+    }
+    &__block {
+      padding: rem(30);
+    }
+    &__flex {
+      grid-gap: rem(10);
+    }
+    &__help-image {
+      max-width: rem(225);
+    }
+    &__help {
+      left: rem(30);
+      padding: 10px;
+    }
+    &__help-block {
+      bottom: 20px;
+      right: -100px;
+    }
+    &__help-heading {
+      font-size: rem(14);
+    }
+    &__help-btn {
+      span {
+        font-size: rem(12);
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .contact {
+    &__row {
+      grid-template-columns: 100%;
+    }
+    &__input-block {
+      padding: rem(20);
+      min-height: auto;
+    }
+    &__send {
+      padding: rem(10) rem(20);
+    }
+    &__flex-heading {
+      font-size: rem(14);
+    }
+    &__flex-input {
+      input {
+        padding: rem(10);
+      }
+    }
+    &__message-field {
+      textarea {
+        padding: rem(10);
+      }
+    }
+    &__block {
+      padding: 1.25rem;
+      &::before, &::after {
+        display: none;
+      }
+    }
+    &__flex {
+      flex-direction: column;
+      grid-gap: rem(20);
+    }
+    &__help-block {
+      display: none;
+    }
+    &__subheading {
+      max-width: rem(350);
+
+    }
+  }
+}

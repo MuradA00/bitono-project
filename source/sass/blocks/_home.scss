@@ -400,6 +400,7 @@
 @include max-width(25em) {
   .home {
     &__offer {
+      transform: translateX(10px);
       margin: 0 0 0 auto;
     }
   }

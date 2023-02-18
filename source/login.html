@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="eng">
+@@include('_head.html',{})
+
+<body class="main-page large-decor">
+  @@include('_menu.html',{})
+  @@include('_header.html',{})
+  @@include('_decor.html',{})
+  <main>
+    <section class="auth login section-spacing">
+      <div class="login__container main-container">
+        <div class="auth__wrapper login__wrapper">
+          <div class="auth__inner login__auth">
+            <div class="auth__heading login__heading">
+              <h1 class="auth__title login__title main-title main-title_large">
+                Welcome back
+              </h1>
+              <div class="auth__subheading login__subheading">
+                <p>
+                  It is a program for calculating the profit received from your purchased Hash Power
+                </p>
+              </div>
+            </div>
+            <div class="auth__error">
+              <div class="auth__error-icon">
+                <img src="img/register/error-icon.svg" alt="error-icon">
+              </div>
+              <p>
+                <span>Error:</span> The username is not registered on this site. If you are unsure of your username, try your email address instead.
+              </p>
+            </div>
+            <div class="auth__column">
+              <div class="auth__column-block">
+                <div class="auth__column-heading">
+                  Username
+                </div>
+                <div class="auth__column-field">
+                  <div class="auth__column-icon">
+                    <img src="img/register/user-icon.svg" alt="user-icon">
+                  </div>
+                  <input type="text" placeholder="Alex">
+                </div>
+              </div>
+              <div class="auth__column-block">
+                <div class="auth__column-heading">
+                  Password
+                </div>
+                <div class="auth__column-field">
+                  <div class="auth__column-icon">
+                    <img src="img/register/lock-icon.svg" alt="user-icon">
+                  </div>
+                  <input type="password" placeholder="********">
+                </div>
+              </div>
+            </div>
+            <div class="auth__options">
+              <button class="auth__submit btn" type="submit">
+                Log in
+              </button>
+              <div class="auth__alter-link">
+                <span>Already have an account?</span>
+                <a href="register.html">Register</a>
+              </div>
+              <a href="#" class="auth__forgot">
+                Forgot password?
+              </a>
+            </div>
+          </div>
+          <a href="#" class="auth__bonus">
+            <div class="auth__bonus-text">
+              <span>Get up to</span>
+              <p>
+                $199
+              </p>
+            </div>
+            <div class="auth__bottom-text">
+              Go get your bonus today!
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  @@include('_footer.html',{})
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/dropdowns.js"></script>
+  <script src="js/common.js"></script>
+</body>
+
+</html>

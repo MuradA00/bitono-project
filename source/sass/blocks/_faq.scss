@@ -90,6 +90,12 @@
 
 @include max-width($mobMedia) {
   .faq {
+    &__title {
+      margin-bottom: rem(20);
+    }
+    &__main-title {
+      text-align: center;
+    }
     &__inner {
       padding: rem(20);
     }

@@ -54,9 +54,14 @@ html {
   transform: translate3d(0px, 60px, 0);
 }
 
+svg {
+  fill: transparent;
+}
+
 p {
   letter-spacing: 0.02em;
   line-height: 150%;
+  color: hsla(0, 0%, 77%, 1);
   @include max-width($mobMedia) {
     font-size: rem(15);
   }
