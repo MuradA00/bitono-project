@@ -3,26 +3,24 @@
     display: flex;
     grid-gap: rem(20) rem(18);
     flex-wrap: wrap;
-    li {
-      width: calc((100% / 4) - 14px);
-    }
   }
   &__row-item {
     padding: rem(31.5) rem(17);
     border-radius: 10px;
     background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
     filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
-    // backdrop-filter: blur(50.15px);
     display: flex;
     grid-gap: rem(15);
+    cursor: pointer;
     transition: all 500ms ease;
     position: relative;
+    width: calc((100% / 4) - 14px);
     &::before {
       @include psevdo;
       outline: 1px solid hsla(230, 89%, 61%, 1);
       width: calc(100% + 1px);
       height: calc(100% + 1px);
-      border-radius: inherit;
+      border-radius: 10px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -36,19 +34,24 @@
   }
   &__dep {
     padding: rem(10) rem(20);
-    font-size: rem(10);
+    font-size: rem(12);
     grid-gap: rem(10);
   }
   &__withdraw {
     padding: rem(10) rem(19);
     border: 1px solid hsla(0, 0%, 95%, 1);
     border-radius: 10px;
-    font-size: rem(10);
+    font-size: rem(12);
     font-weight: 600;
     @include dfc;
     text-align: center;
     color: #fff;
     min-height: rem(37);
+    transition: 300ms ease;
+    &:hover {
+      background: #f2f2f2;
+      color: var(--clr-dark-400);
+    }
   }
   &__actions {
     display: flex;
@@ -90,8 +93,8 @@
       width: rem(15);
       height: rem(15);
       background-image: url('../../img/home/play-btn-icon.png');
-      right: -30px;
-      bottom: 10px;
+      right: -25px;
+      bottom: 5px;
       transform: skew(12deg) rotate(70deg);
       background-size: 100% 100%;
     }
@@ -274,6 +277,11 @@
         }
       }
     }
+    &__bonus-wrapper {
+      // &::after {
+      //   right: -15px;
+      // }
+    }
     &__row-icon {
       height: fit-content;
       img, svg {
@@ -302,17 +310,15 @@
   .wallet {
     &__row-item {
       justify-content: center;
+      width: calc((100% / 2) - 5px);
     }
     &__row {
       grid-gap: rem(11) rem(8);
-      li {
-        width: calc((100% / 2) - 5px);
-      }
     }
     &__column-item {
       flex-direction: column;
       &_flex {
-        grid-gap: rem(30);
+        grid-gap: rem(45);
         padding: rem(20) rem(11) rem(20);
         &--align-start {
           padding: rem(33) rem(26) rem(24) rem(11);
@@ -328,6 +334,7 @@
     }
     &__bonus-block {
       margin-left: auto;
+      margin-right: rem(20);
     }
     &__col {
       width: 100%;
@@ -337,10 +344,14 @@
 
 @include max-width(23.375em) {
   .wallet {
-    &__row {
-      li {
-        width: 100%;
-      }
+    &__row-item {
+      width: 100%;
     }
+  }
+}
+
+.selected-block {
+  &::before {
+    opacity: 1;
   }
 }

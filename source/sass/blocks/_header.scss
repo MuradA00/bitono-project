@@ -15,6 +15,9 @@
   &__currency-icon {
     max-width: rem(24);
   }
+  &__currency-arrow {
+    transition: all 250ms ease;
+  }
   &__currency-name {
     margin-left: rem(15);
     color: hsla(0, 0%, 100%, 0.7);

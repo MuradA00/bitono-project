@@ -9,15 +9,17 @@ const closeIcon = document.querySelector('.menu__close'),
       navLinks = document.querySelectorAll('.menu__nav-link'),
       menu = document.querySelector('.menu'),
       body = document.body,
-      html = document.documentElement;
+      html = document.documentElement,
+      hashBlocks = document.querySelectorAll('.hashrate__grid-item-block'),
+      warningPopups = document.querySelectorAll('.hashrate__popup'),
+      warningClose = document.querySelectorAll('.hashrate__close'),
+      headerDropdown = document.querySelector('.header-dropdown'),
+      headerDropdownTrigger = document.querySelector('.header__currency-wrapper');
 
-function closeMenuByClick() {
-  if (navLinks.length > 0) {
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    })
-  }
-}
+headerDropdownTrigger.addEventListener('click', () => {
+  headerDropdown.classList.toggle('dropdown-collapse')
+  headerDropdownTrigger.classList.toggle('header-dropdown-active')
+})
 
 closeMenuByClick();
 
@@ -60,6 +62,18 @@ body.addEventListener('click', (e) => {
   }
 })
 
+hashBlocks.forEach(block => {{
+  block.addEventListener('click', () => {
+    block.classList.toggle('active-block')
+  })
+}})
+
+document.querySelectorAll('.wallet__row-item').forEach(item => {{
+  item.addEventListener('click', () => {
+    item.classList.toggle('selected-block')
+  })
+}})
+
 
 $(function(){
   $('.plans__marquee').marquee({
@@ -93,3 +107,19 @@ $(function(){
 
   });
 });
+
+function closePopup(popUp, closePopupIcon) {
+  closePopupIcon.addEventListener('click', () => popUp.classList.add('close-popup'))
+}
+
+closePopup(document.querySelector('.hashrate__error'), document.querySelector('.hashrate__close-error'));
+
+closePopup(document.querySelector('.hashrate__success'), document.querySelector('.hashrate__close-success'));
+
+function closeMenuByClick() {
+  if (navLinks.length > 0) {
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    })
+  }
+}

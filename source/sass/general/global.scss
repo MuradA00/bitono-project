@@ -72,6 +72,18 @@ main {
   .header__register {
     display: none;
   }
+  .header__line {
+    display: none;
+  }
+  .header__secure {
+    display: none;
+  }
+  .header__options {
+    grid-gap: rem(30);
+  }
+  .header__currency {
+    display: flex;
+  }
   .header__login {
     display: block;
   }
