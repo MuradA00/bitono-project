@@ -31,6 +31,14 @@
   &__register {
     padding: rem(15) rem(42.5);
   }
+  &__login {
+    max-width: rem(42);
+    display: none;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      transform: translateY(2px);
+    }
+  }
   &__actions {
     @include df;
     grid-gap: rem(50);
@@ -101,6 +109,9 @@
     &__burger {
       display: flex;
       margin-left: rem(10);
+    }
+    &__login {
+      display: none !important;
     }
   }
 }

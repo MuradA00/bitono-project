@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="eng">
+@@include('_head.html',{})
+
+<body class="main-page large-decor is-logined">
+  @@include('_menu.html',{})
+  @@include('_header.html',{})
+  @@include('_decor.html',{})
+
+  <main>
+    <div class="wrapper">
+      <div class="navigation-wrapper main-container">
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">
+                <img src="img/navigation/dashboard-icon.svg" alt="navigation-icon">
+                <span>
+                  Dashboard
+                </span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="wallet-page.html" class="navigation__link navigation__link_selected">
+                <img src="img/navigation/wallet-icon.svg" alt="navigation-icon">
+                <span>
+                  Wallet
+                </span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="hashrate-page.html" class="navigation__link">
+                <img src="img/navigation/hashrate-icon.svg" alt="navigation-icon">
+                <span>
+                  Buy Hashrate
+                </span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">
+                <img src="img/navigation/calculator-icon.svg" alt="navigation-icon">
+                <span>
+                  Calculator
+                </span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">
+                <img src="img/navigation/profile2user.svg" alt="navigation-icon">
+                <span>
+                  Referral System
+                </span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="settings-page.html" class="navigation__link">
+                <img src="img/navigation/settings-icon.svg" alt="navigation-icon">
+                <span>
+                  Settings
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="options-wrapper main-container">
+        @@include('_wallet.html',{})
+      </div>
+    </div>
+  </main>
+
+  @@include('_footer.html',{})
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/dropdowns.js"></script>
+  <script src="js/common.js"></script>
+</body>
+
+</html>

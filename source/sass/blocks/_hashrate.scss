@@ -1,0 +1,396 @@
+.hashrate {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(25);
+  }
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: rem(25) rem(14);
+    position: relative;
+    z-index: 50;
+  }
+  &__popup {
+    padding: rem(12);
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+  }
+  &__icon {
+    max-width: rem(24);
+  }
+  &__success-icon, .hashrate__error-icon {
+    margin-left: auto;
+  }
+  &__warning-flex {
+    display: flex;
+    grid-gap: rem(20);
+    justify-content: center;
+  }
+  &__popup-container {
+    padding: 0;
+  }
+  &__close {
+    cursor: pointer;
+    margin-left: auto;
+  }
+  &__error {
+    transform: translateY(-40px);
+    background-color: hsla(358, 87%, 59%, 1);
+  }
+  &__success {
+    transform: translateY(-40px);
+    background-color: hsla(148, 81%, 41%, 1);
+  }
+  &__error-text, .hashrate__success-text {
+    color: #fff;
+    margin: 0 auto;
+  }
+  &__grid-item {
+    background-color: hsla(235, 29%, 15%, 1);
+    width: calc((100% / 2) - 14px);
+    border-radius: 10px;
+    &_outputs {
+      padding: rem(40) rem(20) rem(20);
+      background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+      filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
+      backdrop-filter: blur(50.15px);
+    }
+    &_no-spacing {
+      background-color: transparent;
+    }
+    .wallet__column-item {
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+    &_flex {
+      display: flex;
+      grid-gap: rem(20) rem(11);
+      flex-wrap: wrap;
+      padding: rem(27) rem(22);
+    }
+  }
+  &__subcontent {
+    margin-top: rem(10);
+    margin-bottom: rem(18);
+  }
+  &__grid-balance {
+    font-size: rem(13);
+    color: hsla(220, 12%, 60%, 1);
+    span {
+      color: #fff;
+    }
+  }
+  &__profit {
+    @include df;
+    grid-gap: rem(10);
+  }
+  &__profit-text {
+    color: hsla(0, 0%, 77%, 1);
+    span {
+      color: hsla(0, 0%, 100%, 1);
+      font-weight: 600;
+    }
+  }
+  &__grid-col-info {
+    @include df;
+    grid-gap: rem(15);
+  }
+  &__grid-col-currency-name {
+    font-size: rem(13);
+    span {
+      font-size: rem(8);
+    }
+  }
+  &__grid-col-arrow {
+    display: grid;
+    place-items: center;
+  }
+  &__grid-item-block {
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(18.1325px 16.4326px 27.7654px rgba(0, 7, 72, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: rem(20);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    grid-gap: rem(10);
+    width: calc((100% / 3) - 10px);
+    transition: all 300ms ease;
+    position: relative;
+    &::before {
+      @include psevdo;
+      width: 100%;
+      height: 100%;
+      background: var(--clr-yellow-400);
+      top: 0;
+      left: 0;
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: all 400ms ease;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+    &:hover .hashrate__info-name {
+      color: hsla(235, 29%, 15%, 1);
+    }
+  }
+  &__grid-col-item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(10);
+  }
+  &__grid-col-heading {
+    color: hsla(220, 12%, 60%, 1);
+    font-size: rem(13);
+  }
+  &__grid-col-amount {
+    font-size: rem(15);
+  }
+  &__grid-col-per {
+    color: hsla(148, 81%, 41%, 1);
+    font-size: rem(15);
+  }
+  &__grid-col {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(20);
+  }
+  &__grid-col-flex {
+    display: flex;
+    grid-gap: rem(15);
+    .hashrate__grid-col-output {
+      flex: 1;
+    }
+  }
+  &__grid-col-output {
+    & > * {
+      font-size: rem(15);
+    }
+  }
+  &__grid-col-btn {
+    background-color: var(--clr-yellow-400);
+    padding: rem(15) rem(23);
+    border-radius: 10px;
+    font-size: rem(15);
+    font-weight: 600;
+    transition: 300ms ease;
+    &:hover {
+      background-color: hsla(49, 100%, 81%, 1)
+    }
+  }
+  &__grid-col-output {
+    @include df;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: hsla(234, 40%, 10%, 1);
+  }
+  &__info-name {
+    font-size: rem(16);
+    font-weight: 600;
+    transition: all 400ms ease;
+  }
+  &__info-bottom-text {
+    font-size: rem(10);
+    transition: all 400ms ease;
+    color: hsla(0, 0%, 77%, 1);
+  }
+  &__balance {
+    padding: rem(30);
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(18.1325px 16.4326px 27.7654px rgba(0, 7, 72, 0.08));
+    backdrop-filter: blur(13.0328px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  &__balance-heading {
+    @include df;
+    grid-gap: rem(10);
+    margin-bottom: rem(10);
+  }
+  &__balance-icon {
+    max-width: rem(20);
+  }
+  &__balance-title {
+    font-size: rem(16);
+    letter-spacing: .02em;
+  }
+  &__row {
+    @include df;
+    justify-content: space-between;
+  }
+  &__balance-current {
+    font-size: rem(30);
+    text-transform: uppercase;
+    font-weight: 600;
+    span {
+      color: hsla(148, 81%, 41%, 1);
+    }
+  }
+  &__balance-amount {
+    display: flex;
+    align-items: flex-end;
+    grid-gap: rem(10);
+
+  }
+  &__balance-amount {
+
+  }
+  &__balance-short {
+    font-size: rem(20);
+    span {
+      color: hsla(148, 81%, 41%, 1);
+    }
+  }
+}
+
+.payments-method {
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  &:hover .dropdown{
+    opacity: 1;
+    transform: translateY(90px);
+    pointer-events: all;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 5000;
+  background-color: hsla(235, 29%, 15%, 1);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 5px 0 5px;
+  left: 0px;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  transition: all 400ms ease;
+  opacity: 0;
+  transform: translateY(95px);
+  pointer-events: none;
+  &__item {
+    padding: rem(11) rem(16);
+    transition: 300ms ease;
+    display: flex;
+    align-items: center;
+    grid-gap: rem(15);
+    &:hover {
+      background-color: hsla(234, 40%, 10%, 1);
+    }
+  }
+  &__icon {
+    width: rem(24);
+    height: rem(24);
+  }
+  &__coin-name {
+    font-size: rem(13);
+    span {
+      font-size: rem(9);
+    }
+  }
+}
+
+@include max-width($tabletMedia) {
+  .hashrate {
+    &__succes-text {
+      font-size: rem(14);
+      text-align: center;
+      margin: 0 auto;
+    }
+    &__close {
+      flex: 0 0 auto;
+    }
+    &__success-icon {
+      display: none;
+    }
+    &__error-icon {
+      display: none;
+    }
+    &__error-text {
+      font-size: rem(14);
+      text-align: center;
+      margin: 0 auto;
+    }
+    &__balance-current {
+      font-size: rem(25);
+    }
+    &__grid {
+      flex-direction: column;
+    }
+    &__popup {
+      padding: rem(3) rem(20);
+    }
+    &__grid-col-btn {
+      display: none;
+    }
+    &__grid-balance {
+      display: none;
+    }
+    &__profit-text {
+      font-size: rem(15);
+    }
+    &__grid-item {
+      width: 100%;
+      padding: rem(20) rem(15);
+      &_outputs {
+        padding: rem(40) rem(24);
+      }
+      &_no-spacing {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .hashrate {
+    &__grid-item {
+      &_outputs {
+        padding: rem(40) rem(11);
+      }
+      &_flex {
+        grid-gap: rem(10);
+      }
+    }
+    &__grid-item-block {
+      width: calc((100% / 2) - 7px);
+    }
+    &__row {
+      flex-direction: column;
+      grid-gap: rem(20);
+    }
+    &__balance {
+      padding: rem(30) rem(15);
+    }
+    &__balance-heading {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+@include max-width(25em) {
+  .hashrate {
+    &__grid-item-block {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+@include max-width(23.4375em) {
+  .hashrate {
+    &__balance-amount {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -46,6 +46,10 @@
       border: 1px solid hsla(237, 16%, 21%, 1);
       color: #fff;
       font-weight: 300;
+      transition: all 200ms ease;
+      &:focus {
+        border: 1px solid #6a5c27;
+      }
       &::placeholder {
         font-weight: inherit;
       }
@@ -62,6 +66,10 @@
       outline: none;
       color: #fff;
       resize: none;
+      transition: all 200ms ease;
+      &:hover {
+        border: 1px solid #6a5c27;
+      }
     }
   }
   &__input-block {

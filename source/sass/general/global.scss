@@ -42,11 +42,38 @@ html {
   min-height: -webkit-fill-available;
 }
 
+main {
+  position: relative;
+}
+
+.wrapper {
+  padding: rem(40) rem(20) 0;
+}
+
 .body-locked {
   overflow: hidden;
   &::before {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.options-wrapper {
+  padding: rem(54) rem(31);
+  background-color: hsla(234, 40%, 10%, 1);
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: rem(40);
+  @include max-width($tabletMedia) {
+    padding: rem(30) rem(15);
+  }
+}
+
+.is-logined {
+  .header__register {
+    display: none;
+  }
+  .header__login {
+    display: block;
   }
 }
 
