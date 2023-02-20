@@ -10,12 +10,11 @@
   backdrop-filter: blur(8px);
   border-radius: 20px 0px 0px 20px;
   border-left: 0.69px solid rgba(255, 255, 255, 0.2);
-  z-index: 1000;
+  z-index: 2000;
   transition: all 400ms ease 400ms;
   transform: translateX(100%);
   pointer-events: none;
   user-select: none;
-  overflow: hidden;
   &__close {
     margin-left: auto;
     margin-left: rem(80);
@@ -59,12 +58,28 @@
   &__register {
     padding: rem(15) rem(44.5);
   }
+  &__dropdown {
+    button {
+      padding: rem(5);
+    }
+    ul {
+      display: none;
+      max-height: rem(200);
+      width: rem(500);
+      li {
+        padding: rem(5) rem(10);
+      }
+    }
+  }
 }
 
 .show-menu {
   transform: translateX(0);
   user-select: auto;
   pointer-events: all;
+  .header-dropdown {
+    display: grid;
+  }
 }
 
 @include min-width($mobMedia) {

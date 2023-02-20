@@ -41,9 +41,12 @@ $cont-padding: rem(20);
   background-color: var(--clr-yellow-400);
   transition: all 300ms ease;
   text-transform: capitalize;
-  [type^=disabled] {
+  &--disabled {
     background-color: hsla(0, 0%, 82%, 1);
     cursor:not-allowed;
+    &:hover {
+      background-color: hsla(0, 0%, 82%, 1) !important;
+    }
   }
   &:hover {
     background-color: hsla(49, 100%, 81%, 1);

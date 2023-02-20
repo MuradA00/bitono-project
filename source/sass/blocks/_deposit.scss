@@ -1,0 +1,118 @@
+.deposit {
+  &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: rem(15);
+        justify-content: space-between;
+        margin-bottom: rem(15);
+  }
+  &__tabs-item {
+        cursor: pointer;
+        padding: rem(12) rem(17);
+        border-radius: 10px;
+        transition: all 400ms ease;
+        position: relative;
+        font-size: rem(14);
+        &::before {
+            z-index: -1;
+            @include psevdo;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            background: hsla(230, 73%, 65%, 1);
+            opacity: 0;
+            transition: inherit;
+        }
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+  &__qr {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: rem(28);
+  }
+  &__qr-heading {
+    font-size: rem(20);
+    letter-spacing: 0.02em;
+    margin-bottom: rem(15);
+  }
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+  }
+  &__col-heading {
+    font-size: rem(13);
+    color: hsla(220, 12%, 60%, 1);
+    margin-bottom: rem(10);
+  }
+  &__col-subheading {
+    font-size: rem(13);
+    color: hsla(0, 0%, 77%, 1);
+    span {
+      color: #fff;
+    }
+  }
+  &__col-item {
+    margin-bottom: rem(28);
+  }
+  &__inputs-heading {
+    font-size: rem(13);
+    color: hsla(220, 12%, 60%, 1);
+    margin-bottom: rem(10);
+  }
+  &__copy {
+    padding: rem(15) rem(20);
+  }
+  &__inputs-item {
+    display: flex;
+    grid-gap: rem(13);
+    input {
+      background-color: hsla(234, 40%, 10%, 1);
+      padding: rem(15) rem(10);
+      border-radius: 10px;
+      transition: all 300ms ease;
+      outline: 1px solid transparent;
+      font-size: rem(15);
+      color: #fff;
+      &::placeholder {
+        font-size: inherit;
+        color: inherit;
+      }
+      &:focus {
+        outline: 1px solid hsla(230, 89%, 61%, 1);
+      }
+    }
+  }
+}
+
+@include max-width($tabletMedia) {
+  .deposit {
+    &__flex {
+      flex-direction: column;
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .deposit {
+    &__copy {
+      border-radius: 10px;
+    }
+    &__tabs {
+      grid-gap: rem(13);
+      justify-content: center;
+    }
+  }
+}
+
+.active-tab {
+  &::before {
+    opacity: 1;
+  }
+}
