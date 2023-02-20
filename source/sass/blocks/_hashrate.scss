@@ -61,7 +61,6 @@
       padding: rem(40) rem(20) rem(20);
       background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
       filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
-      backdrop-filter: blur(10.15px);
     }
     &_dropdown {
       position: relative;
@@ -225,7 +224,6 @@
     padding: rem(30);
     background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
     filter: drop-shadow(18.1325px 16.4326px 27.7654px rgba(0, 7, 72, 0.08));
-    backdrop-filter: blur(13.0328px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }

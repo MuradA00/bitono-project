@@ -59,7 +59,7 @@
   top: 0;
   left: 1.25rem;
   width: calc(100% - 2.5rem);
-  transform: translateY(145px) !important;
+  transform: translateY(175px) !important;
   @include max-width($mobMedia) {
     width: calc(100% - 1.85rem);
     left: 1rem;
@@ -68,6 +68,9 @@
 
 @include max-width($mobMedia) {
   .withdraw {
+    &__output {
+      margin-top: rem(60);
+    }
     &__btn {
       padding: rem(15) rem(10);
     }

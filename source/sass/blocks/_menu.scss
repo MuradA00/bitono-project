@@ -59,12 +59,15 @@
     padding: rem(15) rem(44.5);
   }
   &__dropdown {
+    .header__currency {
+      display: flex !important;
+    }
     button {
       padding: rem(5);
     }
     ul {
       display: none;
-      max-height: rem(200);
+      max-height: rem(190);
       width: rem(500);
       li {
         padding: rem(5) rem(10);

@@ -87,6 +87,9 @@ main {
   .header__login {
     display: block;
   }
+  .menu__register {
+    display: none;
+  }
 }
 
 [data-aos^=fade-up][data-aos^=fade-up] {
