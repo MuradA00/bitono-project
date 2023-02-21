@@ -219,11 +219,11 @@ input[type="number"] {
   bottom: 1rem !important;
 }
 .simplebar-scrollbar.simplebar-visible:before {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 [data-simplebar] {
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
 }
 
 // * {
