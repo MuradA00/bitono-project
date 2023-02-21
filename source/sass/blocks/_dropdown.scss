@@ -12,11 +12,11 @@
   border: 1px solid hsla(0, 0%, 100%, 0.2);
   transition: all 400ms ease;
   opacity: 0;
-  transform: translateY(95px);
   pointer-events: none;
   max-height: rem(235);
   scrollbar-width: none;
   overflow-y: scroll;
+  top: rem(90);
   &__item {
     padding: rem(11) 0 rem(11) rem(16);
     transition: 300ms ease;
@@ -42,7 +42,6 @@
 
 .dropdown-collapse {
     opacity: 1;
-    transform: translateY(90px);
     pointer-events: all;
 }
 
@@ -56,9 +55,12 @@
   }
 }
 
+.dropdown-wrapper {
+  position: relative;
+}
+
 .dropdown {
   scrollbar-color: #EDF3F6;
-
   &::-webkit-scrollbar {
     width: 9px;
     box-shadow: none;
