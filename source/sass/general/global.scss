@@ -90,6 +90,9 @@ main {
   .menu__register {
     display: none;
   }
+  .menu__dropdown {
+    display: block;
+  }
 }
 
 [data-aos^=fade-up][data-aos^=fade-up] {

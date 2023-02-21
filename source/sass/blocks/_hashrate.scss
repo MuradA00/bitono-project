@@ -108,10 +108,16 @@
     @include df;
     grid-gap: rem(15);
   }
+  &__grid-col-icon {
+    img {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
   &__grid-col-currency-name {
     font-size: rem(13);
     span {
-      font-size: rem(8);
+      font-size: rem(9);
     }
   }
   &__grid-col-arrow {
@@ -273,52 +279,6 @@
   position: relative;
   z-index: 1000;
 
-}
-
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 5000;
-  background-color: hsla(235, 29%, 15%, 1);
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  padding: 5px 0 5px;
-  left: 0px;
-  border: 1px solid hsla(0, 0%, 100%, 0.2);
-  transition: all 400ms ease;
-  opacity: 0;
-  transform: translateY(95px);
-  pointer-events: none;
-  max-height: rem(235);
-  overflow-y: scroll;
-  &__item {
-    padding: rem(11) 0 rem(11) rem(16);
-    transition: 300ms ease;
-    display: flex;
-    align-items: center;
-    grid-gap: rem(15);
-    &:hover {
-      background-color: hsla(234, 40%, 10%, 1);
-    }
-  }
-  &__icon {
-    width: rem(24);
-    height: rem(24);
-  }
-  &__coin-name {
-    font-size: rem(13);
-    span {
-      font-size: rem(9);
-    }
-  }
-}
-
-.dropdown-collapse {
-    opacity: 1;
-    transform: translateY(90px);
-    pointer-events: all;
 }
 
 @include max-width($tabletMedia) {

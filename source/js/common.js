@@ -14,15 +14,22 @@ const closeIcon = document.querySelector('.menu__close'),
       warningClose = document.querySelectorAll('.hashrate__close'),
       headerDropdown = document.querySelector('.header-dropdown'),
       headerDropdownTrigger = document.querySelector('.header__currency'),
-      depositBtns = document.querySelectorAll('.deposit__tabs-item');
-
-    headerDropdownTrigger.addEventListener('click', (e) => {
-    headerDropdown.classList.toggle('header-dropdown-collapse')
-    headerDropdownTrigger.classList.toggle('header-dropdown-active')
-    console.log(e.target);
-})
+      depositBtns = document.querySelectorAll('.deposit__tabs-item'),
+      desktopHeaderCurrency = document.querySelector('.desktop-currency'),
+      desktopHeaderDropdown = document.querySelector('.desktop-header-dropdown');
 
 closeMenuByClick();
+
+headerDropdownTrigger.addEventListener('click', (e) => {
+  headerDropdown.classList.toggle('header-dropdown-collapse')
+  headerDropdownTrigger.classList.toggle('header-dropdown-active')
+})
+
+desktopHeaderCurrency.addEventListener('click', (e) => {
+  desktopHeaderDropdown.classList.toggle('header-dropdown-collapse')
+  desktopHeaderCurrency.classList.toggle('header-dropdown-active')
+})
+
 
 function showMenu() {
   closeIcon.classList.remove('closed')
@@ -118,12 +125,46 @@ if (depositBtns) {
   })
 }
 
+function selectedFromDropdown(selectItems, dropdown, currentSelect) {
+  selectItems.forEach(item => {
+    item.addEventListener('click', function() {
+      dropdown.classList.remove('dropdown-collapse')
+      let currentText = this.innerHTML;
+      currentSelect.innerHTML = currentText;
+    })
+  })
+}
 
 const dropdownTrigger = document.querySelector('.hashrate__grid-col-output'),
       dropdown = document.querySelector('.dropdown');
 
 dropdownTrigger.addEventListener('click', () => {
   dropdown.classList.toggle('dropdown-collapse')
+})
+
+
+document.querySelectorAll('.dropdown__item').forEach(item => {
+  item.addEventListener('click', function() {
+    dropdown.classList.remove('dropdown-collapse')
+    let currentText = this.innerHTML;
+    document.querySelector('.hashrate__grid-col-info').innerHTML = currentText;
+  })
+})
+
+let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
+let currencyName = document.querySelector('.desktop-currency .header__currency-name');
+let currencyAmount = document.querySelector('.desktop-currency .header__currency-amount');
+
+document.querySelectorAll('.header-dropdown__item').forEach(item => {
+
+  item.addEventListener('click', function() {
+    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
+    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
+    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
+    currencyName.textContent = currentCoinText;
+    currencyIcon.src = currentCoinIcon.src;
+    currencyAmount.textContent = currentCointAmount;
+  })
 })
 
 
@@ -134,5 +175,4 @@ function closePopup(popUp, closePopupIcon) {
 closePopup(document.querySelector('.hashrate__error'), document.querySelector('.hashrate__close-error'));
 
 closePopup(document.querySelector('.hashrate__success'), document.querySelector('.hashrate__close-success'));
-
 

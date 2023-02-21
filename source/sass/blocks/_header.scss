@@ -19,6 +19,7 @@
     transition: all 250ms ease;
   }
   &__currency-name {
+    text-transform: uppercase;
     margin-left: rem(15);
     color: hsla(0, 0%, 100%, 0.7);
   }
