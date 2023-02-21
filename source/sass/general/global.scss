@@ -15,6 +15,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 2rem;
+  scrollbar-width: none;
   &::before {
     @include psevdo;
     top: 0;
@@ -73,6 +74,9 @@ main {
     display: none;
   }
   .header__line {
+    display: none;
+  }
+  .header__secure {
     display: none;
   }
   .header__secure {
@@ -205,6 +209,21 @@ input[type="number"] {
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
+}
+
+.simplebar-scrollbar:before {
+  background: #fff !important;
+  width: 1px;
+  top: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
+[data-simplebar] {
+  flex-wrap: nowrap;
 }
 
 // * {

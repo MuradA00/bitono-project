@@ -1,0 +1,9 @@
+.calc {
+  &__block {
+    display: flex;
+    grid-gap: rem(56);
+  }
+  &__col {
+    flex: 1;
+  }
+}

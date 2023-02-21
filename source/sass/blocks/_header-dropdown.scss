@@ -12,7 +12,7 @@
   background-color: hsla(237, 18%, 19%, 1);
   border-radius: 15px;
   width: rem(579);
-  position: absolute;
+  position: absolute !important;
   z-index: 1000;
   right: 0;
   margin-top: rem(15);
@@ -23,6 +23,7 @@
   overflow-y: scroll;
   max-height: rem(410);
   transform: translateY(5px);
+  scrollbar-width: none !important;
   &__item {
     padding: rem(16);
     @include df;
