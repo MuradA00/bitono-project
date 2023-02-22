@@ -37,8 +37,10 @@
     filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
     padding: rem(75) rem(40);
     border-radius: 10px;
-    backdrop-filter: blur(50px);
+    transform: translateY(10px);
+    backdrop-filter: blur(10px);
     max-width: rem(590);
+    transition: all 400ms ease;
   }
   &__subheading {
     max-width: rem(390);

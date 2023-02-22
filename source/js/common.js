@@ -91,6 +91,19 @@ desktopHeaderCurrency.addEventListener('click', (e) => {
   desktopHeaderCurrency.classList.toggle('header-dropdown-active')
 })
 
+function selectedFromDropdown(selectItems, dropdown, currentSelect) {
+  if (selectItems && dropdown && currentSelect) {
+    selectItems.forEach(item => {
+      item.addEventListener('click', function() {
+        dropdown.classList.remove('dropdown-collapse')
+        let currentText = this.innerHTML;
+        currentSelect.innerHTML = currentText;
+      })
+    })
+  } else {
+    return
+  }
+}
 
 function showMenu() {
   closeIcon.classList.remove('closed')
