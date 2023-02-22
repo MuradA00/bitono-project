@@ -149,7 +149,6 @@ body.addEventListener('click', (e) => {
   }
 })
 
-
 function closeMenuByClick() {
   if (navLinks.length > 0) {
     navLinks.forEach(link => {
@@ -167,8 +166,6 @@ if (depositBtns) {
     })
   })
 }
-
-
 
 const dropdownTrigger = document.querySelector('.hashrate__grid-col-output'),
       dropdown = document.querySelector('.dropdown');
@@ -217,22 +214,6 @@ function secondCopy() {
     document.querySelector('.copied-popup').classList.remove('copied-show')
   }, 2000)
 };
-
-// copyText.select();
-// copyText.setSelectionRange(0, 99999); // For mobile devices
-
-// // Copy the text inside the text field
-// navigator.clipboard.writeText(copyText.value);
-
-// const div = document.querySelector( '.dropdown');
-
-// document.addEventListener( 'click', (e) => {
-//   const withinBoundaries = e.composedPath().includes(div);
-
-//   if ( ! withinBoundaries ) {
-//     div.classList.remove('dropdown-collapse') // скрываем элемент т к клик был за его пределами
-//   }
-// })
 
 function closePopup(popUp, closePopupIcon) {
   closePopupIcon.addEventListener('click', () => popUp.classList.add('close-popup'))

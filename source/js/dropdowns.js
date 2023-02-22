@@ -1,11 +1,6 @@
-const acc = document.querySelectorAll(".faq-list__item");
-var i;
+const secondCalcDropdownTrigger = document.querySelector('.calc__dropdown-trigger'),
+      secondCalcDropdown = document.querySelector('.second-dropdown');
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function(e) {
-    this.classList.toggle("collapse");
-    var panel = this;
-  });
-}
-
-
+secondCalcDropdownTrigger.addEventListener('click', () => {
+  secondCalcDropdown.classList.toggle('dropdown-collapse')
+})
