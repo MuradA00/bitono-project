@@ -1,0 +1,401 @@
+.ref-system {
+  .simplebar-scrollbar:before {
+    background: #fff !important;
+    height: 1px !important;
+    bottom: rem(20) !important;
+    left: rem(15);
+  }
+  .simplebar-track.simplebar-horizontal {
+    height: 1rem;
+  }
+  .simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1 !important;
+  }
+  .wallet {
+    &__bonus-block {
+      flex: 1;
+    }
+    &__bonus-block-heading {
+      font-size: rem(15);
+    }
+    &__bonus-wrapper {
+      padding: rem(14) rem(8) rem(9) rem(8);
+    }
+    &__bonus-block-heading {
+      text-align: center;
+    }
+  }
+  .referral {
+    &__block-wrapper {
+      width: 100%;
+    }
+    &__graph-amount {
+      padding: rem(6) 1rem;
+      font-size: 1rem;
+      min-width: auto;
+      top: -35px;
+    }
+    &__graph-level {
+      font-size: rem(12);
+    }
+  }
+  .referral__graph-block {
+    max-width: rem(158);
+    min-width: rem(158);
+    &_first {
+      min-height: rem(134) !important;
+    }
+    &_second {
+      min-height: rem(85);
+    }
+    &_third {
+      min-height: rem(53);
+    }
+    p {
+      font-size: rem(12);
+    }
+  }
+  &__table-wrapper {
+    display: grid;
+    justify-content: center;
+    padding: rem(30) rem(50);
+    outline: 1px solid rgba(255, 255, 255, .1);
+  }
+  &__table {
+    margin-bottom: rem(25);
+  }
+  &__row {
+    display: flex;
+    grid-gap: 1rem;
+    margin-bottom: rem(30);
+  }
+  &__bottom-block-inner {
+    flex: 1;
+    margin-bottom: rem(30);
+  }
+  &__copy {
+    padding: rem(15) rem(20);
+  }
+  &__bottom-input {
+    display: flex;
+    grid-gap: rem(13);
+    input {
+      padding: rem(15) rem(10);
+      background-color: hsla(234, 40%, 10%, 1);
+      border-radius: 10px;
+      color: hsla(0, 0%, 95%, 1);
+      font-size: rem(15);
+      flex: 1;
+    }
+  }
+  &__block-heading {
+    font-size: rem(35);
+    font-weight: 700;
+    margin-bottom: rem(20);
+  }
+  &__block-content {
+    color: hsla(0, 0%, 77%, 1);
+    font-size: 1rem;
+  }
+  &__flex {
+    display: flex;
+    grid-gap: rem(55);
+    margin-bottom: rem(55);
+  }
+  &__block-content {
+    max-width: rem(240);
+    line-height: 160%;
+  }
+  &__grid-item {
+    flex: 1;
+    padding: rem(30);
+    &--statistics {
+      padding: rem(15) rem(30);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      grid-gap: rem(85);
+      margin-bottom: rem(45);
+    }
+    &--invite {
+      @include df;
+      grid-gap: rem(65);
+      outline: 1px solid rgba(255, 255, 255, .1);
+    }
+  }
+  &__bottom-block-title {
+    font-size: rem(35);
+    font-weight: 700;
+    margin-bottom: rem(25);
+  }
+  &__bottom-info-heading {
+    color: hsla(220, 12%, 60%, 1);
+    font-size: rem(13);
+    margin-bottom: rem(10);
+  }
+  &__flex-item {
+    @include df;
+    grid-gap: rem(10);
+  }
+  &__btns {
+    display: flex;
+    grid-gap: rem(15);
+  }
+  &__flex-info-heading {
+    font-size: rem(14);
+    color: hsla(249, 6%, 57%, 1);
+    margin-bottom: rem(3);
+  }
+  &__link {
+    padding: rem(15) rem(20);
+    grid-gap: rem(10);
+  }
+  &__flex-icon {
+    img, svg {
+      width: rem(45);
+      height: rem(45);
+    }
+  }
+  &__flex-info-output {
+    font-size: rem(28);
+    font-weight: 600;
+  }
+  &__actions {
+    display: flex;
+    grid-gap: rem(15);
+    justify-content: flex-end;
+    button {
+      font-weight: 600;
+      display: inline-flex;
+      border-radius: 10px;
+      font-size: rem(15);
+      transition: all 300ms ease;
+      &:nth-child(1) {
+        padding: rem(15) rem(40);
+        color: hsla(0, 0%, 95%, 1);
+        border: 1px solid hsla(0, 0%, 100%, 1);
+        &:hover {
+          color: var(--clr-dark-400);
+          background: #f2f2f2;
+        }
+      }
+      &:nth-child(2) {
+        background-color: var(--clr-yellow-400);
+        padding: rem(15) rem(35.5);
+        grid-gap: rem(10);
+        align-items: center;
+        &:hover {
+          background-color: hsla(49, 100%, 81%, 1);
+        }
+      }
+    }
+  }
+  th {
+    text-align: center;
+    font-weight: 580;
+    color: #fff;
+    padding: 0 rem(58) rem(27);
+    border-bottom: 1px solid hsla(218, 59%, 58%, 0.29);
+    &:first-child {
+      padding: 0 rem(58) rem(27) 0;
+    }
+    &:last-child {
+      padding: 0 0 rem(27) rem(58);
+    }
+    div {
+      @include df;
+      text-align: center;
+      justify-content: center;
+      grid-gap: rem(5);
+    }
+  }
+  td {
+    padding: rem(25) 0 0;
+    &:first-child {
+      text-align: left;
+      padding-left: 20px;
+    }
+    &:last-child {
+      padding-right: 10px;
+      text-align: right;
+    }
+  }
+  td {
+    color: hsla(0, 0%, 77%, 1);
+    letter-spacing: 0.01em;
+    text-align: center;
+    &:not(:last-child) {
+      padding-bottom: rem(5);
+    }
+  }
+  .ref-block {
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(18.1325px 16.4326px 27.7654px rgba(0, 7, 72, 0.08));
+    border-radius: 10px;
+  }
+}
+
+@include max-width($tabletMedia) {
+  .ref-system {
+    .wallet {
+      &__bonus-block {
+        flex: 0 0 auto;
+      }
+      &__bonus-wrapper {
+        min-width: rem(185);
+      }
+    }
+    .referral {
+      &__block-wrapper {
+        height: fit-content;
+      }
+      &__graph-amount {
+        top: -17px !important;
+        min-width: rem(68);
+      }
+      &__graph-block {
+        min-width: 100%;
+      }
+    }
+    &__row {
+      flex-direction: column;
+    }
+    &__table-wrapper {
+      padding: rem(15) rem(30);
+    }
+    &__actions {
+      button {
+        font-size: rem(15);
+        padding: rem(15) rem(20) !important;
+      }
+    }
+    &__bottom-block-inner {
+      margin-bottom: 0;
+    }
+    &__flex-info-output {
+      font-size: rem(28);
+    }
+    &__grid-item {
+      &--invite {
+        justify-content: center;
+      }
+      &--statistics {
+        flex-direction: column;
+        grid-gap: rem(67);
+        & > * {
+          width: 100%;
+        }
+      }
+    }
+    td {
+      font-size: rem(13);
+      padding: 1rem 0 0;
+    }
+    th {
+      padding: 0 rem(40) rem(10);
+      &:first-child {
+        padding: 0 rem(20) rem(10) 0;
+      }
+      &:last-child {
+        padding: 0 0 rem(10) rem(20);
+      }
+      div {
+        grid-gap: 3px;
+        font-size: rem(12);
+        img {
+          width: rem(13);
+        }
+      }
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .ref-system {
+    .referral {
+      &__inner {
+        grid-gap: rem(45);
+      }
+    }
+    &__flex {
+      margin-bottom: rem(35);
+    }
+    &__grid-item-block {
+      width: 100%;
+    }
+    &__flex-icon {
+      img {
+        width: rem(35);
+        height: rem(35);
+      }
+    }
+    &__table {
+      padding-left: 5px;
+      padding: 0;
+      margin-bottom: rem(30);
+    }
+    &__flex-info-output {
+      font-size: rem(28);
+    }
+    &__flex-info-heading {
+      font-size: rem(10);
+    }
+    &__grid-item {
+      &--statistics {
+        grid-gap: rem(50);
+      }
+      &--invite {
+        flex-direction: column;
+      }
+    }
+    td {
+      padding-bottom: 0 !important;
+      &:first-child {
+        padding-left: 10px;
+      }
+      &:last-child {
+        padding-right: 0px;
+      }
+    }
+    th {
+      padding: 0 rem(17) rem(10);
+      &:first-child {
+        padding: 0 rem(17) rem(10) 0;
+      }
+      &:last-child {
+        padding: 0 0 rem(10) rem(17);
+      }
+      div {
+        font-size: rem(12);
+        img {
+          width: rem(13);
+        }
+      }
+    }
+    &__actions {
+      justify-content: flex-start;
+      padding-left: rem(35);
+    }
+    &__table-wrapper {
+      justify-content: flex-start;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      padding: rem(20) rem(15) rem(35) rem(15);
+    }
+  }
+}
+
+@include max-width(33.25em) {
+  .ref-system {
+    &__flex-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__btns {
+      flex-direction: column;
+    }
+    &__grid-item {
+      padding: rem(30) rem(15);
+    }
+  }
+}

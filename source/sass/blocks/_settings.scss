@@ -1,4 +1,4 @@
-.settings {
+  .settings {
   &__row {
     display: flex;
     grid-gap: rem(20);
@@ -40,6 +40,9 @@
       font-size: rem(15);
       transition: 300ms ease;
       outline: 1px solid transparent;
+      &:focus {
+        outline: 1px solid hsla(230, 76%, 57%, 1);
+      }
       &:hover {
         outline: 1px solid hsla(230, 76%, 57%, 1);
       }

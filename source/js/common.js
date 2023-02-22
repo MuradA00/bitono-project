@@ -76,28 +76,23 @@ body.addEventListener('click', (e) => {
 
 $(function(){
   $('.plans__marquee').marquee({
-  //если хотите всегда анимировать при помощи jQuery
+
   allowCss3Support: true,
 
   css3easing: 'linear',
 
   easing: 'linear',
 
-  //приостанавливает время перед стартом следующей анимации в миллисекундах
   delayBeforeStart: 500,
-  //'left', 'right', 'up' or 'down'
+
   direction: 'left',
 
-  //true или false - должен ли marquee быть дублирован для эффекта продолжающегося потока
   duplicated: true,
 
-  //скорость marquee в миллисекундах
   duration: 14000,
 
-  //расстояние в пикселях между бегущими строками
   gap: 40,
 
-  //приостанавливает цикл marquee
   pauseOnCycle: true,
 
   pauseOnHover: true,
@@ -106,6 +101,22 @@ $(function(){
 
   });
 });
+
+let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
+let currencyName = document.querySelector('.desktop-currency .header__currency-name');
+let currencyAmount = document.querySelector('.desktop-currency .header__currency-amount');
+
+document.querySelectorAll('.header-dropdown__item').forEach(item => {
+
+  item.addEventListener('click', function() {
+    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
+    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
+    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
+    currencyName.textContent = currentCoinText;
+    currencyIcon.src = currentCoinIcon.src;
+    currencyAmount.textContent = currentCointAmount;
+  })
+})
 
 function closeMenuByClick() {
   if (navLinks.length > 0) {
@@ -151,22 +162,15 @@ document.querySelectorAll('.dropdown__item').forEach(item => {
   })
 })
 
-let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
-let currencyName = document.querySelector('.desktop-currency .header__currency-name');
-let currencyAmount = document.querySelector('.desktop-currency .header__currency-amount');
+// const div = document.querySelector( '.dropdown');
 
-document.querySelectorAll('.header-dropdown__item').forEach(item => {
+// document.addEventListener( 'click', (e) => {
+//   const withinBoundaries = e.composedPath().includes(div);
 
-  item.addEventListener('click', function() {
-    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
-    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
-    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
-    currencyName.textContent = currentCoinText;
-    currencyIcon.src = currentCoinIcon.src;
-    currencyAmount.textContent = currentCointAmount;
-  })
-})
-
+//   if ( ! withinBoundaries ) {
+//     div.classList.remove('dropdown-collapse') // скрываем элемент т к клик был за его пределами
+//   }
+// })
 
 function closePopup(popUp, closePopupIcon) {
   closePopupIcon.addEventListener('click', () => popUp.classList.add('close-popup'))

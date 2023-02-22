@@ -59,7 +59,7 @@
   position: relative;
 }
 
-.dropdown {
+.dropdown, .header-dropdown, .ref-system__table-wrapper {
   scrollbar-color: #EDF3F6;
   &::-webkit-scrollbar {
     width: 9px;

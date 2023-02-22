@@ -82,6 +82,12 @@
     padding: rem(23) rem(10);
     border-radius: 10px;
     line-height: 120%;
+    input {
+      &::placeholder {
+        font-size: rem(15);
+        color: hsla(0, 0%, 95%, 1);
+      }
+    }
     span {
       display: block;
       margin-left: rem(25);

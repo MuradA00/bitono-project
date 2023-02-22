@@ -79,6 +79,9 @@ main {
   .header__secure {
     display: none;
   }
+  .menu__secure {
+    display: none;
+  }
   .header__secure {
     display: none;
   }
@@ -94,8 +97,10 @@ main {
   .menu__register {
     display: none;
   }
-  .menu__dropdown {
-    display: block;
+  @include max-width($mobMedia) {
+    .menu__dropdown {
+      display: block;
+    }
   }
 }
 
@@ -211,16 +216,20 @@ input[type="number"] {
   clip-path: inset(100%);
 }
 
-.simplebar-scrollbar:before {
-  background: #fff !important;
-  width: 1px;
-  top: 1rem !important;
-  right: 1rem !important;
-  bottom: 1rem !important;
+.header-dropdown, .dropdown {
+  .simplebar-scrollbar:before {
+    background: #fff !important;
+    width: 1px;
+    top: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+  }
+  .simplebar-scrollbar.simplebar-visible:before {
+    opacity: 1 !important;
+  }
 }
-.simplebar-scrollbar.simplebar-visible:before {
-  opacity: 1 !important;
-}
+
+
 
 [data-simplebar] {
   flex-wrap: nowrap !important;

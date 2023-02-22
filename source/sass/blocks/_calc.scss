@@ -1,9 +1,205 @@
 .calc {
+  border-radius: 8.5px;
   &__block {
+    border-radius: 8.5px;
     display: flex;
     grid-gap: rem(56);
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(18.0027px 16.315px 27.5667px rgba(0, 7, 72, 0.08));
+    padding: rem(42) rem(36);
+    margin-bottom: rem(30);
   }
   &__col {
     flex: 1;
+  }
+  &__col-top-total {
+    padding-bottom: rem(23);
+    text-align: center;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.12);
+  }
+  &__col-top {
+    background-color: hsla(234, 40%, 10%, 1);
+    padding: rem(47) rem(50);
+    border-radius: 20px;
+    margin-bottom: rem(33);
+  }
+  &__col-top-heading {
+    font-size: rem(15);
+    margin-bottom: rem(15);
+    text-align: center;
+  }
+  &__col-amount {
+    font-size: rem(46);
+    font-weight: 600;
+    color: var(--clr-yellow-400);
+    margin-bottom: rem(10);
+  }
+  &__col-currency {
+    font-size: rem(35);
+    font-weight: 600;
+  }
+  &__row {
+    display: flex;
+    grid-gap: rem(30);
+    margin-top: rem(15);
+  }
+  &__row-item {
+    flex: 1;
+  }
+  &__row-item-flex {
+    display: flex;
+    grid-gap: rem(10);
+  }
+  &__row-item-flex-text {
+    font-size: rem(13);
+    font-weight: 400;
+  }
+  &__row-heading {
+    color: var(--clr-yellow-400);
+    font-size: rem(15);
+    margin-bottom: rem(5);
+  }
+  &__submit {
+    width: 100%;
+    padding: rem(20);
+    border-radius: 10px;
+  }
+  .wallet__column-item {
+    max-width: 100%;
+    padding: rem(48) rem(20) rem(15) rem(32);
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+filter: drop-shadow(18.1325px 16.4326px 27.7654px rgba(0, 7, 72, 0.08));
+  }
+  .wallet__bonus-wrapper {
+    width: rem(275);
+    padding: rem(15) rem(16) rem(15) rem(16);
+    max-width: 100%;
+    &::before {
+      width: rem(130);
+      height: rem(170);
+      top: rem(-90);
+    }
+  }
+  .wallet__bonus-block {
+    margin-right: rem(120);
+  }
+  .wallet__bonus-block-heading {
+    font-size: rem(17);
+    span {
+      font-size: rem(20);
+    }
+  }
+  .wallet__bonus-deposit {
+    span {
+      font-size: rem(19);
+    }
+  }
+  .wallet__bonus-heading {
+    font-size: rem(55);
+    margin-bottom: rem(10);
+  }
+  .wallet__bonus-content {
+    max-width: rem(345);
+    margin-bottom: rem(30);
+  }
+  .wallet__bonus-gift {
+    max-width: rem(90);
+    left: rem(-60);
+    &_small {
+      max-width: rem(50);
+      left: unset;
+      right: 0;
+      top: -12px;
+    }
+  }
+}
+
+@include max-width($tabletMedia) {
+  .calc {
+    &__col-top {
+      padding: rem(45);
+    }
+    &__col-amount {
+      font-size: rem(46);
+    }
+    &__block {
+      flex-direction: column;
+      padding: rem(42) rem(30) rem(40);
+    }
+    .wallet__bonus-heading {
+      font-size: rem(35);
+    }
+    .wallet__bonus-wrapper {
+      max-width: rem(175);
+      padding: rem(15) rem(10) rem(10) rem(10);
+      &::before {
+        width: rem(83);
+        height: rem(110);
+        top: -60px;
+      }
+    }
+    .wallet__bonus-gift {
+      width: rem(80);
+      height: rem(80);
+      &_small {
+        width: rem(31);
+        height: rem(31);
+        top: -8px;
+      }
+    }
+    .wallet__bonus-deposit {
+      span {
+        font-size: rem(12);
+      }
+    }
+    .wallet__column-item {
+      grid-gap: rem(50);
+      padding: rem(45) rem(24) rem(45) rem(35);
+    }
+    .wallet__bonus-block {
+      margin-right: 0;
+    }
+    .wallet__bonus-block-heading {
+      font-size: rem(11);
+      span {
+        font-size: rem(14);
+      }
+    }
+    .wallet__bonus-content {
+      max-width: rem(330);
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include max-width($mobMedia) {
+  .calc {
+    &__col-amount {
+      font-size: rem(26);
+      margin-bottom: rem(10);
+    }
+    &__col-top {
+      padding: rem(40) rem(26.5) rem(40);
+    }
+    &__col-currency {
+      font-size: rem(15);
+    }
+    &__row {
+      flex-direction: column;
+      grid-gap: rem(20);
+    }
+    &__block {
+      margin-bottom: 1.25rem;
+      padding: rem(20) rem(15) rem(50);
+    }
+    .wallet__column-item {
+      padding: rem(15) rem(15) rem(24) rem(15);
+    }
+    .wallet__bonus-heading {
+      font-size: rem(30);
+    }
+    .wallet__bonus-block {
+      margin-right: rem(35);
+    }
   }
 }

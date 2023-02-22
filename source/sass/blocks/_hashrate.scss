@@ -339,6 +339,9 @@
       &_outputs {
         padding: rem(40) rem(11);
       }
+      &_no-spacing {
+        order: -1;
+      }
       &_flex {
         grid-gap: rem(10);
       }
@@ -360,7 +363,7 @@
   }
 }
 
-@include max-width(25em) {
+@include max-width(24.375em) {
   .hashrate {
     &__grid-item-block {
       width: 100%;

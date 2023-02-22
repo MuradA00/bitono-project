@@ -1,4 +1,9 @@
 .withdraw {
+  &-dropdown {
+    width: 100% !important;
+    left: 0 !important;
+    top: 4rem !important;
+  }
   &__output {
     margin-top: rem(100);
     display: flex;
