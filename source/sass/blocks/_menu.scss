@@ -96,6 +96,12 @@
   }
 }
 
+@include max-width($mobMedia) {
+  .header-dropdown {
+    border-radius: 5px;
+  }
+}
+
 @include max-width(37.5em) {
   .menu__dropdown {
     ul {
