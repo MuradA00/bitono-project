@@ -6,13 +6,17 @@ secondCalcDropdownTrigger.addEventListener('click', () => {
 })
 
 function selectedFromDropdown(selectItems, dropdown, currentSelect) {
-  selectItems.forEach(item => {
-    item.addEventListener('click', function() {
-      dropdown.classList.remove('dropdown-collapse')
-      let currentText = this.innerHTML;
-      currentSelect.innerHTML = currentText;
+  if (selectItems && dropdown && currentSelect) {
+    selectItems.forEach(item => {
+      item.addEventListener('click', function() {
+        dropdown.classList.remove('dropdown-collapse')
+        let currentText = this.innerHTML;
+        currentSelect.innerHTML = currentText;
+      })
     })
-  })
+  } else {
+    return
+  }
 }
 
 selectedFromDropdown(
