@@ -48,6 +48,39 @@ const closeIcon = document.querySelector('.menu__close'),
 
 closeMenuByClick();
 
+let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
+let currencyName = document.querySelector('.desktop-currency .header__currency-name');
+let currencyAmount = document.querySelector('.desktop-currency .header__currency-amount');
+
+document.querySelectorAll('.header-dropdown__item').forEach(item => {
+
+  item.addEventListener('click', function() {
+    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
+    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
+    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
+    currencyName.textContent = currentCoinText;
+    currencyIcon.src = currentCoinIcon.src;
+    currencyAmount.textContent = currentCointAmount;
+  })
+})
+
+
+let mobCurrencyIcon = document.querySelector('.menu__dropdown .header__currency-icon img');
+let mobCurrencyName = document.querySelector('.menu__dropdown .header__currency-name');
+let mobCurrencyAmount = document.querySelector('.menu__dropdown .header__currency-amount');
+
+document.querySelectorAll('.header-dropdown__item').forEach(item => {
+
+  item.addEventListener('click', function() {
+    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
+    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
+    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
+    mobCurrencyName.textContent = currentCoinText;
+    mobCurrencyIcon.src = currentCoinIcon.src;
+    mobCurrencyAmount.textContent = currentCointAmount;
+  })
+})
+
 headerDropdownTrigger.addEventListener('click', (e) => {
   headerDropdown.classList.toggle('header-dropdown-collapse')
   headerDropdownTrigger.classList.toggle('header-dropdown-active')
@@ -116,22 +149,6 @@ body.addEventListener('click', (e) => {
   }
 })
 
-
-let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
-let currencyName = document.querySelector('.desktop-currency .header__currency-name');
-let currencyAmount = document.querySelector('.desktop-currency .header__currency-amount');
-
-document.querySelectorAll('.header-dropdown__item').forEach(item => {
-
-  item.addEventListener('click', function() {
-    let currentCoinText = this.querySelector('.header-dropdown__coin span').textContent;
-    let currentCointAmount = this.querySelector('.header-dropdown__amount').textContent;
-    let currentCoinIcon = this.querySelector('.header-dropdown__coin img');
-    currencyName.textContent = currentCoinText;
-    currencyIcon.src = currentCoinIcon.src;
-    currencyAmount.textContent = currentCointAmount;
-  })
-})
 
 function closeMenuByClick() {
   if (navLinks.length > 0) {

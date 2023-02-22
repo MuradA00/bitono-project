@@ -64,6 +64,11 @@
   &__dropdown {
     .header__currency {
       display: flex !important;
+      flex-wrap: wrap;
+      grid-gap: rem(10);
+      & > * {
+        margin: 0;
+      }
     }
     button {
       padding: rem(5);
