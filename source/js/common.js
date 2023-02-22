@@ -4,6 +4,34 @@ AOS.init({
   duration: 800
 })
 
+$(function(){
+  $('.plans__marquee').marquee({
+
+  allowCss3Support: true,
+
+  css3easing: 'linear',
+
+  easing: 'linear',
+
+  delayBeforeStart: 500,
+
+  direction: 'left',
+
+  duplicated: true,
+
+  duration: 14000,
+
+  gap: 40,
+
+  pauseOnCycle: true,
+
+  pauseOnHover: true,
+
+  startVisible: true
+
+  });
+});
+
 const closeIcon = document.querySelector('.menu__close'),
       burger = document.querySelector('.header__burger'),
       navLinks = document.querySelectorAll('.menu__nav-link'),
@@ -30,14 +58,20 @@ desktopHeaderCurrency.addEventListener('click', (e) => {
   desktopHeaderCurrency.classList.toggle('header-dropdown-active')
 })
 
-function showDropdown(trigger, dropdown) {
-  trigger.addEventListener('click', () => {
-    dropdown.classList.toggle('dropdown-collapse');
-    trigger.classList.toggle('selected-input');
+function selectedFromDropdown(selectItems, dropdown, currentSelect) {
+  selectItems.forEach(item => {
+    item.addEventListener('click', function() {
+      dropdown.classList.remove('dropdown-collapse')
+      let currentText = this.innerHTML;
+      currentSelect.innerHTML = currentText;
+    })
   })
 }
 
-showDropdown(document.querySelector('.calc__dropdown-trigger'), document.querySelector('.second-dropdown'));
+selectedFromDropdown(document.querySelectorAll('.second-dropdown li'), document.querySelector('.second-dropdown'), document.querySelector('.calc__dropdown-trigger .hashrate__grid-col-info'))
+
+selectedFromDropdown(document.querySelectorAll('#depDropdown ul li'), document.querySelector('#depDropdown'), document.querySelector('#depDropdownTrigger .hashrate__grid-col-info'))
+
 
 function showMenu() {
   closeIcon.classList.remove('closed')
@@ -82,33 +116,6 @@ body.addEventListener('click', (e) => {
   }
 })
 
-$(function(){
-  $('.plans__marquee').marquee({
-
-  allowCss3Support: true,
-
-  css3easing: 'linear',
-
-  easing: 'linear',
-
-  delayBeforeStart: 500,
-
-  direction: 'left',
-
-  duplicated: true,
-
-  duration: 14000,
-
-  gap: 40,
-
-  pauseOnCycle: true,
-
-  pauseOnHover: true,
-
-  startVisible: true
-
-  });
-});
 
 let currencyIcon = document.querySelector('.desktop-currency .header__currency-icon img');
 let currencyName = document.querySelector('.desktop-currency .header__currency-name');
@@ -144,17 +151,7 @@ if (depositBtns) {
   })
 }
 
-function selectedFromDropdown(selectItems, dropdown, currentSelect) {
-  selectItems.forEach(item => {
-    item.addEventListener('click', function() {
-      dropdown.classList.remove('dropdown-collapse')
-      let currentText = this.innerHTML;
-      currentSelect.innerHTML = currentText;
-    })
-  })
-}
 
-selectedFromDropdown(document.querySelectorAll('.second-dropdown li'), document.querySelector('.second-dropdown'), document.querySelector('.calc__dropdown-trigger .hashrate__grid-col-info'))
 
 const dropdownTrigger = document.querySelector('.hashrate__grid-col-output'),
       dropdown = document.querySelector('.dropdown');

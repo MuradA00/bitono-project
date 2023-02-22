@@ -88,6 +88,23 @@
   }
 }
 
+@include max-width(37.5em) {
+  .menu__dropdown {
+    ul {
+      width: rem(200);
+      grid-gap: rem(6);
+    }
+    li {
+      flex-direction: column;
+      grid-gap: rem(15);
+      padding: rem(15) 10px rem(10) !important;
+    }
+    button {
+      padding: rem(10);
+    }
+  }
+}
+
 @include min-width($mobMedia) {
   .menu {
     &__secure {

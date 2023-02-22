@@ -121,6 +121,7 @@
       grid-gap: rem(75);
       flex-wrap: wrap;
       margin-bottom: rem(35);
+      &::after {}
     }
     &__link {
       font-size: rem(15);
