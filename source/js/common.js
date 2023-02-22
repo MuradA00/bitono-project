@@ -81,12 +81,12 @@ function showMenu() {
     menu.classList.add('show-menu')
     body.classList.add('body-locked')
     html.classList.add('body-locked')
-    document.querySelector('.menu__dropdown ul').style.display = 'grid'
+    document.querySelector('.menu__dropdown ul').style.display = 'flex'
   } else {
     menu.classList.remove('show-menu')
     body.classList.remove('body-locked')
     html.classList.remove('body-locked');
-    document.querySelector('.menu__dropdown ul').style.display = 'grid'
+    document.querySelector('.menu__dropdown ul').style.display = 'flex'
   }
 }
 

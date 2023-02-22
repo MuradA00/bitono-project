@@ -69,10 +69,13 @@
       padding: rem(5);
     }
     ul {
+      align-items: center !important;
+      justify-content: space-between !important;
       display: none;
       max-height: rem(190);
       width: rem(500);
       li {
+        width: 100%;
         padding: rem(5) rem(10);
       }
     }
