@@ -77,9 +77,12 @@
             <div class="ref-system__bottom-info-heading">
               This is your referral link:
             </div>
-            <div class="ref-system__bottom-input">
-              <input type="text" value="https://bitono.org/?ref=140388">
-              <button class="ref-system__copy btn">Copy</button>
+            <div class="ref-system__bottom-input popup-wrapper">
+              <input id="myInput" type="text" value="https://bitono.org/?ref=140388">
+              <button onclick="myFunction()" class="ref-system__copy btn">Copy</button>
+              <div class="copied-popup">
+                Copied
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +130,7 @@
       </div>
     </div>
     <div class="ref-system__table-wrapper ref-block" data-simplebar data-simplebar-auto-hide="false">
-      <table class="ref-system__table">
+      <table class="ref-system__table" style="width: 100%;">
           <thead>
             <tr>
               <th><div><img src="img/ref-system/user.svg" alt="user-icon">Username</div></th>

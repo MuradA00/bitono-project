@@ -30,6 +30,14 @@ desktopHeaderCurrency.addEventListener('click', (e) => {
   desktopHeaderCurrency.classList.toggle('header-dropdown-active')
 })
 
+function showDropdown(trigger, dropdown) {
+  trigger.addEventListener('click', () => {
+    dropdown.classList.toggle('dropdown-collapse');
+    trigger.classList.toggle('selected-input');
+  })
+}
+
+showDropdown(document.querySelector('.calc__dropdown-trigger'), document.querySelector('.second-dropdown'));
 
 function showMenu() {
   closeIcon.classList.remove('closed')
@@ -146,6 +154,8 @@ function selectedFromDropdown(selectItems, dropdown, currentSelect) {
   })
 }
 
+selectedFromDropdown(document.querySelectorAll('.second-dropdown li'), document.querySelector('.second-dropdown'), document.querySelector('.calc__dropdown-trigger .hashrate__grid-col-info'))
+
 const dropdownTrigger = document.querySelector('.hashrate__grid-col-output'),
       dropdown = document.querySelector('.dropdown');
 
@@ -161,6 +171,44 @@ document.querySelectorAll('.dropdown__item').forEach(item => {
     document.querySelector('.hashrate__grid-col-info').innerHTML = currentText;
   })
 })
+
+function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  document.querySelector('.copied-popup').classList.add('copied-show')
+  setTimeout(function() {
+    document.querySelector('.copied-popup').classList.remove('copied-show')
+  }, 2000)
+};
+
+function secondCopy() {
+  // Get the text field
+  var copyText = document.getElementById("secondInput");
+
+  // Select the text field
+
+
+  // Alert the copied text
+  document.querySelector('.copied-popup').classList.add('copied-show')
+  setTimeout(function() {
+    document.querySelector('.copied-popup').classList.remove('copied-show')
+  }, 2000)
+};
+
+// copyText.select();
+// copyText.setSelectionRange(0, 99999); // For mobile devices
+
+// // Copy the text inside the text field
+// navigator.clipboard.writeText(copyText.value);
 
 // const div = document.querySelector( '.dropdown');
 
@@ -179,4 +227,5 @@ function closePopup(popUp, closePopupIcon) {
 closePopup(document.querySelector('.hashrate__error'), document.querySelector('.hashrate__close-error'));
 
 closePopup(document.querySelector('.hashrate__success'), document.querySelector('.hashrate__close-success'));
+
 

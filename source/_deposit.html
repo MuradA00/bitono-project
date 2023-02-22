@@ -242,11 +242,14 @@
                 <div class="deposit__inputs-heading">
                   Send XLM to this address:
                 </div>
-                <div class="deposit__inputs-item">
-                  <input type="text" value="GDODU4ADATBOFTOK2BMAZI6UCW5EFU3IZTHLRNH">
+                <div class="deposit__inputs-item popup-wrapper">
+                  <input type="text" id="myInput" value="GDODU4ADATBOFTOK2BMAZI6UCW5EFU3IZTHLRNH">
                   <button class="deposit__copy btn">
                     Copy
                   </button>
+                  <div class="copied-popup">
+                    Copied
+                  </div>
                 </div>
               </div>
               <div class="deposit__inputs-block">
@@ -254,8 +257,8 @@
                   Tag
                 </div>
                 <div class="deposit__inputs-item">
-                  <input type="text" value="18106388">
-                  <button class="deposit__copy btn">
+                  <input type="text" value="18106388" >
+                  <button class="deposit__copy btn" id="secondInput" onclick="secondCopy()">
                     Copy
                   </button>
                 </div>

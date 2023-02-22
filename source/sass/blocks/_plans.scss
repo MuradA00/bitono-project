@@ -200,7 +200,7 @@
   &__table-row-item {
     color: hsla(0, 0%, 77%, 1);
     position: relative;
-    white-space: nowrap;
+    // white-space: nowrap;
     &:nth-child(1) {
       flex: 0 0 rem(130);
     }
@@ -214,12 +214,13 @@
       margin-left: 150px;
     }
     &:nth-child(5) {
-      margin-left: 140.5px;
+      margin-left: 135.5px;
     }
     &_free {
       text-align: center;
       position: relative;
       z-index: 5;
+      white-space: nowrap;
       &::before {
         @include psevdo;
         top: 50%;

@@ -1,0 +1,19 @@
+.profit-calc {
+  &__title {
+    margin-bottom: 15px;
+  }
+  &__subheading {
+    max-width: 465px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__heading {
+    margin-bottom: rem(50);
+  }
+  .calc {
+    &__block {
+      background: transparent;
+      padding: 0;
+    }
+  }
+}

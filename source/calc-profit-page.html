@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="eng">
+@@include('_head.html',{})
+
+<body class="main-page large-decor is-logined">
+  @@include('_menu.html',{})
+  @@include('_header.html',{})
+  @@include('_decor.html',{})
+
+  <main>
+    <section class="profit-calc section-spacing">
+      <div class="profit-calc__container main-container">
+        <div class="profit-calc__body">
+          <div class="profit-calc__heading">
+            <h1 class="profit-calc__title main-title main-title_larg">
+              Profitability calculator
+            </h1>
+            <div class="profit-calc__subheading">
+              <p>
+                It is a program for calculating the profit received from your purchased Hash Power. With the help of the calculator, you will find out the potential income from mining
+              </p>
+            </div>
+          </div>
+          <div class="profit-calc__inner">
+            <div class="calc__block">
+              <div class="calc__col">
+                <div class="calc__col-inputs">
+                  <div class="calc__col-input-item">
+                    <div class="calc__col-input-heading">
+                      What cryptocurrency do you want to invest?
+                    </div>
+                    <div class="dropdown-wrapper">
+                      <div class="withdraw__grid-col-output hashrate__grid-col-output">
+                        <div class="hashrate__grid-col-info">
+                          <div class="hashrate__grid-col-icon">
+                            <img src="img/wallet/usdt.svg.svg" alt="usdt-icon">
+                          </div>
+                          <div class="hashrate__grid-col-currency-name">
+                            Tether (USDT) <span>TRC20</span>
+                          </div>
+                        </div>
+                        <div class="hashrate__grid-col-arrow">
+                          <img src="img/faq/faq-arrow.svg" alt="arrow-down">
+                        </div>
+                      </div>
+                      <ul class="withdraw-dropdown dropdown" data-simplebar data-simplebar-auto-hide="false">
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/btc-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Bitcoin (BTS)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/trx-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Tron (TRX)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/usdt.svg.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Tether (USDT) <span>TRC20</span>
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/bnb.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Binance Coin (BNB)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/dogecoin.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Dogecoin (DOGE)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/eth.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Ethereum (ETH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/litecoin-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Litecoin (LTC)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/busd.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Binance USD (BUSD) <span>BEP20</span>
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/bch.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Bitcoin Cash (BCH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/dash-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Dash (DASH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/xlm.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Stellar (XLM)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/zec.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            ZCash (ZEC)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/ripple-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Ripple (XRP)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/shib.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Shiba Inu (SHIB) BEP20
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/ada.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Cardano (ADA) BEP20
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/usdc.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            USD Coin (USDC) BEP20
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="calc__col-input-item">
+                    <div class="calc__col-input-heading">
+                      What amount do you want to invest?
+                    </div>
+                    <div class="calc__col-input-block">
+                      <input type="text" placeholder="50">
+                      <span>BTC</span>
+                    </div>
+                  </div>
+                  <div class="calc__col-input-item">
+                    <div class="calc__col-input-heading">
+                      What cryptocurrency do you want to mine?
+                    </div>
+                    <div class="dropdown-wrapper">
+                      <div class="calc__dropdown-trigger withdraw__grid-col-output hashrate__grid-col-output">
+                        <div class="hashrate__grid-col-info">
+                          <div class="hashrate__grid-col-icon">
+                            <img src="img/wallet/usdt.svg.svg" alt="usdt-icon">
+                          </div>
+                          <div class="hashrate__grid-col-currency-name">
+                            Tether (USDT) <span>TRC20</span>
+                          </div>
+                        </div>
+                        <div class="hashrate__grid-col-arrow">
+                          <img src="img/faq/faq-arrow.svg" alt="arrow-down">
+                        </div>
+                      </div>
+                      <ul class="withdraw-dropdown dropdown second-dropdown" data-simplebar data-simplebar-auto-hide="false">
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/btc-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Bitcoin (BTS)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/trx-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Tron (TRX)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/usdt.svg.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Tether (USDT) <span>TRC20</span>
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/bnb.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Binance Coin (BNB)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/dogecoin.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Dogecoin (DOGE)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/eth.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Ethereum (ETH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/litecoin-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Litecoin (LTC)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/busd.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Binance USD (BUSD) <span>BEP20</span>
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/bch.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Bitcoin Cash (BCH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/dash-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Dash (DASH)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/xlm.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Stellar (XLM)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/zec.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            ZCash (ZEC)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/plans/ripple-icon.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Ripple (XRP)
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/shib.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Shiba Inu (SHIB) BEP20
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/ada.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            Cardano (ADA) BEP20
+                          </div>
+                        </li>
+                        <li class="dropdown__item">
+                          <div class="dropdown__icon">
+                            <img src="img/wallet/usdc.svg" alt="dropdown-icon">
+                          </div>
+                          <div class="dropdown__coin-name">
+                            USD Coin (USDC) BEP20
+                          </div>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  <div class="calc__col-input-item">
+                    <div class="calc__col-input-heading">
+                      Number of days for cryptocurrency mining
+                    </div>
+                    <div class="calc__col-input-range">
+                      <div class="calc__col-input-amount">
+                        20
+                      </div>
+                      <input class="range" type="range" min="0" max="100" value="40" id="range">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calc__col">
+                <div class="calc__col-top">
+                  <div class="calc__col-top-heading">
+                    Your profit
+                  </div>
+                  <div class="calc__col-top-total">
+                    <div class="calc__col-amount">
+                      0.00000000 BTC
+                    </div>
+                    <div class="calc__col-currency">
+                      ($0.00)
+                    </div>
+                  </div>
+                  <ul class="calc__row">
+                    <li class="calc__row-item">
+                      <div class="calc__row-heading">
+                        $0.04
+                      </div>
+                      <div class="calc__row-item-flex">
+                        <div class="calc__row-item-icon">
+                          <img src="img/calculator/bitcoinconvert.png" alt="bitcoinconvert">
+                        </div>
+                        <div class="calc__row-item-flex-text">
+                          Price for 1 Gh/s
+                        </div>
+                      </div>
+                    </li>
+                    <li class="calc__row-item">
+                      <div class="calc__row-heading">
+                        0 Gh/s
+                      </div>
+                      <div class="calc__row-item-flex">
+                        <div class="calc__row-item-icon">
+                          <img src="img/calculator/chart-icon.svg" alt="bitcoinconvert">
+                        </div>
+                        <div class="calc__row-item-flex-text">
+                          Hash Power
+                        </div>
+                      </div>
+                    </li>
+                    <li class="calc__row-item">
+                      <div class="calc__row-heading">
+                        78%
+                      </div>
+                      <div class="calc__row-item-flex">
+                        <div class="calc__row-item-icon">
+                          <img src="img/calculator/calendar.svg" alt="bitcoinconvert">
+                        </div>
+                        <div class="calc__row-item-flex-text">
+                          Monthly profit
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="calc__bottom">
+                  <button class="calc__submit btn">
+                    Calculate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @@include('_footer.html',{})
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script src="js/rangeScript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/dropdowns.js"></script>
+  <script src="js/common.js"></script>
+</body>
+
+</html>

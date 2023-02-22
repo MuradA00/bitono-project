@@ -1,5 +1,10 @@
 .calc {
   border-radius: 8.5px;
+  .withdraw {
+    &__grid-col-output {
+      margin-bottom: 0;
+    }
+  }
   &__block {
     border-radius: 8.5px;
     display: flex;
@@ -8,6 +13,71 @@
     filter: drop-shadow(18.0027px 16.315px 27.5667px rgba(0, 7, 72, 0.08));
     padding: rem(42) rem(36);
     margin-bottom: rem(30);
+  }
+  &__col-inputs {
+    display: flex;
+    flex-direction: column;
+    grid-gap: rem(20);
+  }
+  &__col-input-amount {
+    margin-bottom: rem(10);
+  }
+  &__col-input-range {
+    input {
+      margin: auto;
+      outline: none;
+      padding: 0;
+      height: 2px;
+      background-color: hsla(0, 0%, 95%, 1);
+      background-image: linear-gradient(90deg, #4463F4 0%, #415CDE 50.52%, #3A58EA 100%);
+
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      &::-webkit-slider-thumb {
+        background-color: red;
+        appearance: none;
+        width: rem(27);
+        height: rem(27);
+        background: linear-gradient(90deg, #4463F4 0%, #415CDE 50.52%, #3A58EA 100%);
+        border: none;
+        border-radius: 50%;
+      }
+      &::-moz-range-thumb {
+        height: 27px;
+        width: 27px;
+          border: 0;
+          background: linear-gradient(90deg, #4463F4 0%, #415CDE 50.52%, #3A58EA 100%);
+
+          border-radius: 50%;
+          -webkit-appearance: none;
+      }
+      &::-webkit-slider-runnable-track {
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        -webkit-appearance: none;
+    }
+    }
+  }
+  &__col-input-heading {
+    font-size: rem(13);
+    color: hsla(220, 12%, 60%, 1);
+    margin-bottom: rem(10);
+  }
+  &__col-input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsla(234, 40%, 10%, 1);
+    padding: rem(16) rem(18);
+    input {
+      color: #fff;
+      background-color: transparent;
+    }
   }
   &__col {
     flex: 1;
