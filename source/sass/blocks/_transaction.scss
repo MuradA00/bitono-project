@@ -141,3 +141,20 @@
     }
   }
 }
+
+
+@include max-width(23.4375em) {
+  .transactions {
+    &__links {
+      grid-gap: rem(40);
+      &::after {
+        width: 14rem;
+      }
+    }
+    &__link {
+      &:nth-child(1) {
+        padding-left: rem(20);
+      }
+    }
+  }
+}
