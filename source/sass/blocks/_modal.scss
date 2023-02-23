@@ -11,6 +11,80 @@
   pointer-events: none;
   opacity: 0;
   transition: 400ms ease;
+  &__actions {
+    width: 100%;
+    display: flex;
+    grid-gap: 1.25rem;
+    button {
+      flex: 1;
+    }
+  }
+  &__balance {
+    @include df;
+    width: 100%;
+    margin-bottom: rem(50);
+    justify-content: space-between;
+
+  }
+  &__close-btn {
+    @include df;
+    justify-content: center;
+    text-align: center;
+    padding: rem(20);
+    color: var(--clr-yellow-400);
+    font-weight: 600;
+    outline: 1px solid var(--clr-yellow-400);
+    border-radius: 10px;
+    transition: all 200ms ease;
+    &:hover {
+      background-color: var(--clr-yellow-400);
+      color: var(--clr-dark-400);
+    }
+  }
+  &__confirm {
+    border-radius: 10px !important;
+  }
+  &__balance-text {
+    font-size: rem(11);
+    letter-spacing: 0.02em;
+    color: hsla(0, 0%, 77%, 1);
+  }
+  &__balance-amount {
+    letter-spacing: 0.02em;
+    font-size: rem(15);
+  }
+  &__confirm {
+    padding: rem(20);
+  }
+  &__inputs {
+    margin-bottom: rem(30);
+    width: 100%;
+    input {
+      background: #0F1123;
+      border: 1px solid rgba(61, 90, 229, 0.09);
+    }
+    .btn {
+      padding: rem(15) !important;
+    }
+  }
+  &_with {
+    .modal__inner {
+      text-align: left;
+    }
+    .modal__body {
+      padding: rem(55) rem(40);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+
+      filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
+    }
+
+    .modal__heading {
+      text-align: center;
+      font-size: rem(44);
+      margin-bottom: rem(50);
+    }
+  }
   &__close {
     cursor: pointer;
     position: absolute;
@@ -71,6 +145,18 @@
 
 @include max-width($tabletMedia) {
   .modal {
+    &_with {
+      .modal__body {
+        padding: rem(30);
+      }
+      .modal__heading {
+        font-size: rem(32);
+        margin-bottom: rem(20);
+      }
+      .modal__balance {
+        margin-bottom: rem(30);
+      }
+    }
     &__body {
       padding: rem(42) rem(22) rem(55) rem(22);
     }
@@ -83,6 +169,18 @@
     }
     &__subheading {
       margin-bottom: rem(20);
+    }
+    &__actions {
+      button {
+        padding: rem(15);
+      }
+    }
+    .deposit__inputs-item {
+      grid-gap: rem(7);
+      .btn {
+        font-size: rem(14);
+        padding: rem(11) !important;
+      }
     }
   }
 }
