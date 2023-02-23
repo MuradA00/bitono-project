@@ -26,6 +26,7 @@ if (withModalTrigger) {
         console.log(e.target);
         if (e.target === withModal.querySelector('.modal__overlay')) {
           withModal.classList.remove('show-modal')
+          document.body.style.overflow = ''
         }
       })
     }
@@ -47,6 +48,7 @@ if (transferModal) {
         window.addEventListener('click', function(e) {
           if (e.target === transferModal.querySelector('.modal__overlay')) {
             transferModal.classList.remove('show-modal')
+            document.body.style.overflow = ''
           }
         })
       }
