@@ -96,6 +96,11 @@
     padding: rem(10) rem(27.4);
     font-size: rem(13);
     grid-gap: rem(10);
+    border-radius: 10px;
+    img {
+      width: rem(17);
+      height: rem(17);
+    }
   }
   &__buy {
     font-size: rem(12);

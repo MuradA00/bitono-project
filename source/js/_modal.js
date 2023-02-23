@@ -1,13 +1,10 @@
 const transferBtns = document.querySelectorAll('.dashboard__buy'),
-      transferModal = document.querySelector('#transferModal'),
-      closeIconModal = document.querySelector('#transferModal .modal__close'),
-      closeTransferModal = document.querySelector('#transferModal .modal__close-btn'),
+      transferModal = document.querySelector('.transferModal'),
+      closeIconModal = document.querySelector('.transferModal .modal__close'),
+      closeTransferModal = document.querySelector('.transferModal .modal__close-btn'),
       withModalTrigger = document.querySelector('#withModalTrigger'),
-      withModal = document.querySelector('#withModal');
-
-// function openModal(modal) {
-//   modal.classList.add('show-modal');
-// }
+      withModal = document.querySelector('#withModal'),
+      modals = document.querySelectorAll('.modal')
 
 function closeModal(closeIcon, closeBtn, modal) {
 
@@ -19,25 +16,30 @@ function closeModal(closeIcon, closeBtn, modal) {
   })
 }
 
-withModalTrigger.addEventListener('click', () => {
-  withModal.classList.add('show-modal')
-  document.body.style.overflow = 'hidden'
-})
-
-transferBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    transferModal.classList.add('show-modal')
+if (withModalTrigger) {
+  withModalTrigger.addEventListener('click', () => {
+    withModal.classList.add('show-modal')
     document.body.style.overflow = 'hidden'
   })
-})
+  closeModal(
+    document.querySelector('#withModal .modal__close'),
+    document.querySelector('#withModal .modal__close-btn'),
+    withModal
+  );
 
+}
 
+if (transferModal) {
+  transferBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      transferModal.classList.add('show-modal')
+      document.body.style.overflow = 'hidden'
+    })
+  })
+  // if (transferModal.classList.contains('show-modal')) {
+  //   console.log('JOPA');
+  // }
+  closeModal(closeIconModal, closeTransferModal, transferModal);
+}
 
-closeModal(
-  document.querySelector('#withModal .modal__close'),
-  document.querySelector('#withModal .modal__close-btn'),
-  withModal
-);
-
-closeModal(closeIconModal, closeTransferModal, transferModal);
 

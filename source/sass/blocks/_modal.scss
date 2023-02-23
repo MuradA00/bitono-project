@@ -11,6 +11,9 @@
   pointer-events: none;
   opacity: 0;
   transition: 400ms ease;
+  &__close-btn {
+    min-width: rem(209);
+  }
   &__actions {
     width: 100%;
     display: flex;
@@ -24,22 +27,6 @@
     width: 100%;
     margin-bottom: rem(50);
     justify-content: space-between;
-
-  }
-  &__close-btn {
-    @include df;
-    justify-content: center;
-    text-align: center;
-    padding: rem(20);
-    color: var(--clr-yellow-400);
-    font-weight: 600;
-    outline: 1px solid var(--clr-yellow-400);
-    border-radius: 10px;
-    transition: all 200ms ease;
-    &:hover {
-      background-color: var(--clr-yellow-400);
-      color: var(--clr-dark-400);
-    }
   }
   &__confirm {
     border-radius: 10px !important;
@@ -70,6 +57,23 @@
   &_with {
     .modal__inner {
       text-align: left;
+    }
+    .modal__close-btn {
+      @include df;
+      justify-content: center;
+      text-align: center;
+      font-size: rem(15);
+      padding: rem(20);
+      min-width: auto;
+      color: var(--clr-yellow-400);
+      font-weight: 600;
+      outline: 1px solid var(--clr-yellow-400);
+      border-radius: 10px;
+      transition: all 200ms ease;
+      &:hover {
+        background-color: var(--clr-yellow-400);
+        color: var(--clr-dark-400);
+      }
     }
     .modal__body {
       padding: rem(55) rem(40);
@@ -172,7 +176,7 @@
     }
     &__actions {
       button {
-        padding: rem(15);
+        padding: rem(15) !important;
       }
     }
     .deposit__inputs-item {
