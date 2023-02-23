@@ -2,6 +2,52 @@
   .btn {
     border-radius: 10px !important;
   }
+  .dataTables_info {
+    display: none;
+  }
+  .dataTables_paginate  {
+    display: flex;
+    grid-gap: rem(15);
+    justify-content: flex-end;
+    span {
+      display: none;
+    }
+  }
+  .paginate_button .current {
+    display: none;
+  }
+  .paginate_button {
+    font-size: rem(15);
+    padding: rem(15) rem(37.5);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 200ms ease;
+  }
+  .next {
+    color: var(--clr-dark-400);
+    background-color: var(--clr-yellow-400);
+    position: relative;
+    align-items: center;
+    grid-gap: rem(10);
+    &::after {
+      height: rem(19);
+      content: url('../../img/ref-system/arrow-right.svg');
+    }
+    &:hover {
+      background-color: hsla(49, 100%, 81%, 1);
+    }
+  }
+  .previous {
+    padding: rem(15) rem(43);
+    color: #fff;
+    border: 1px solid hsla(0, 0%, 100%, 1);
+    &:hover {
+      color: var(--clr-dark-400);
+      background-color: #f2f2f2f2;
+    }
+  }
   .simplebar-scrollbar:before {
     background: #fff !important;
     height: 1px !important;
@@ -308,6 +354,10 @@
       &__inner {
         grid-gap: rem(45);
       }
+    }
+    .previous,
+    .next {
+      padding: rem(15) rem(20);
     }
     &__flex {
       margin-bottom: rem(35);

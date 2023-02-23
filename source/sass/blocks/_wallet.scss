@@ -9,8 +9,6 @@
     border-radius: 10px;
     background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
     filter: drop-shadow(21.0784px 19.1023px 32.2764px rgba(0, 7, 72, 0.08));
-    display: flex;
-    grid-gap: rem(15);
     cursor: pointer;
     transition: all 500ms ease;
     position: relative;
@@ -31,6 +29,11 @@
     &:hover::before {
       opacity: 1;
     }
+  }
+  &__row-link {
+    @include df;
+    grid-gap: rem(15);
+    justify-content: center;
   }
   &__dep {
     padding: rem(10) rem(20);
@@ -341,7 +344,7 @@
   }
 }
 
-@include max-width(23.375em) {
+@include max-width(23.75em) {
   .wallet {
     &__row-item {
       width: 100%;
