@@ -11,6 +11,10 @@
   pointer-events: none;
   opacity: 0;
   transition: 400ms ease;
+  &__overlay {
+    height: 100%;
+    width: 100%;
+  }
   &__close-btn {
     min-width: rem(209);
   }
@@ -54,7 +58,7 @@
       padding: rem(15) !important;
     }
   }
-  &_with {
+  &_width {
     .modal__inner {
       text-align: left;
     }
@@ -106,9 +110,10 @@
     align-items: center;
     height: 100%;
     max-height: calc(100% - 1rem);
-    width: calc(100% - 1rem);
+    width: fit-content;
     max-width: rem(1000);
     margin-inline: auto;
+    padding: rem(10);
   }
   &__body {
     background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
@@ -149,9 +154,13 @@
 
 @include max-width($tabletMedia) {
   .modal {
-    &_with {
+    &_width {
       .modal__body {
         padding: rem(30);
+      }
+      .modal__close {
+        top: 10px;
+        right: 10px;
       }
       .modal__heading {
         font-size: rem(32);
